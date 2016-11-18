@@ -1,0 +1,46 @@
+\subsection{Créer une table sans contrainte}
+
+\begin{description}
+\item[Acteur] : l'utilisateur du logiciel (un étudiant ou un professeur).
+\item[Objectif] : créer une ou plusieurs tables dans la base de données.
+\item[Pré-conditions] : l'utilisateur s'est connecté à la base de données cible.
+\item[Post-conditions] : la ou les tables sont enregistrées dans la base de données ou sinon un message incite à corriger l'erreur.
+\end{description}
+
+\textbf{--> Scénario nominal :}
+\begin{enumerate}
+\item Le système affiche une IHM particulière.
+\item L'utilisateur renseigne le nom de la table, les noms des attributs et leurs types.
+\item L'utilisateur envoie sa table au système.
+\item Le système retourne un message de réussite.
+\end{enumerate}
+
+\textbf{--> Scénario d'exceptions :}
+\begin{description}
+\item 4)a) La table n'est pas créée : les attributs contiennent des caractères spéciaux.
+\item 4)b) La table existe déjà.
+\end{description}
+
+\subsection{Créer une table avec contraintes}
+\begin{description}
+\item[Acteur] : l'utilisateur du logiciel (un étudiant ou un professeur)
+\item[Objectif] : créer une ou plusieurs tables dans la base de données avec éventuellement des contraintes
+\item[Pré-conditions] : l'utilisateur s'est connecté à la base de données cible
+\item[Post-conditions] : la ou les tables sont enregistrées dans la base de données ou sinon un message incite à corriger l'erreur.
+\end{description}
+
+\textbf{--> Scénario nominal :}
+\begin{enumerate}
+\item Le système affiche une IHM particulière.
+\item L'utilisateur renseigne le nom de la table, les noms des attributs et leurs types.
+\item L'utilisateur choisit les contraintes (NOT NULL, UNIQUE, FOREIGN KEY, PRIMARY KEY, CHECK.) associées aux attributs.
+\item L'utilisateur envoie sa table au système.
+\item Le système retourne un message de réussite.
+\end{enumerate}
+
+\textbf{--> Scénario d'exceptions :}
+\begin{description}
+\item 4)a) Le nom des attributs contient des caractères spéciaux.
+\item 4)b) La requête n'a pas réussi car la table existe déjà.
+\item 4)c) La clé étrangère n'existe pas, le système demande à ce que la table référencée soit créée avant d'indiquer la clé étrangère.
+\end{description}

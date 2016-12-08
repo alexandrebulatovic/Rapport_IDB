@@ -1,0 +1,53 @@
+\section{Télécharger GIT}
+GIT est le gestionnaire de version du projet. Il est disponible pour windows comme pour ubuntu.
+\subsection{Télécharger sous ubuntu}
+\begin{itemize}
+\item Ouvrir un terminal \textbf{ctrl + alt + t};
+\item Taper la commande \textbf{sudo apt-get install git}.
+\end{itemize}
+
+\subsection{Télécharger sous windows}
+Se rendre à l'adresse \url{https://git-scm.com/download/win}. Le téléchargement devrait se lancer seul. Si ce n'est pas le cas, choisir la version de GIT voulue.
+
+Installer GIT comme une application courante, en lisant attentivement les paramètres de compatibilités avec Linux.
+
+Faire en sorte d'avoir à disposition un terminal linux (\textit{Bash}), et éventuellement celui de windows (\textit{CMD}).
+
+\section{Créer sa zone de travail}
+\subsection{Ouvrir le terminal}
+\begin{itemize}
+\item ubuntu : \textbf{ctrl + alt +t}.
+\item windows : \textbf{Démarrer, "git bash"}.
+\end{itemize}
+
+\subsection{Se déplacer vers le répertoire voulu}
+Utiliser la commande \textbf{cd <chemin\_acces\_repertoire>} pour déplacer le répertoire courant du terminal à la destination voulue. Le chemin d'accès \textbf{..} permet de revenir au dossier parent.
+
+La commande \textbf{ls -la} affiche l'intégralité du répertoire courant.
+
+La commande \textbf{pwd} affiche le chemin d'accès absolu du répertoire courant.
+
+\subsection{Créer le workspace Eclipse}
+Une fois sur le bon répertoire :
+\begin{enumerate}
+\item \textbf{mkdir tuteur}, ce qui fabrique un nouveau répertoire \textit{tuteur};
+\item ouvrir Eclipse;
+\item positionner le workspace Eclipse dans le répertoire \textit{tuteur};
+\item créer un \underline{nouveau projet java} nommé \textit{idb}.
+\end{enumerate}
+
+\section{Récupérer le projet}
+Revenir sur le terminal.
+\begin{enumerate}
+\item \textbf{cd tuteur/idb};
+\item \textbf{rm -fR src};
+\item \textbf{git clone https://github.com/alexandrebulatovic/IDB};
+\item \textbf{mv IDB src}
+\end{enumerate}
+
+Revenir sur Eclipse, cliquer droit sur l'arborescence du projet, cliquer sur \textit{Refresh}.
+
+C'est terminé.
+
+
+

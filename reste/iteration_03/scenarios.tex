@@ -1,0 +1,31 @@
+\section{Supprimer une à plusieurs tables}
+\begin{description}
+\item[Acteur] : un utilisateur lambda.
+\item[Objectif] : supprimer une ou plusieurs table dans la base.
+\item[Pré-conditions] : l'utilisateur est connecté avec succès à son SGBD depuis l'application.
+  \item[Post-conditions] : la ou les tables supprimées depuis l'application n'existent plus dans la base de données.
+\end{description}
+
+\subsection{Scénario nominal}
+\begin{description}
+\item[1-] L'IHM propose une liste de table de données à supprimer.
+\item[2-] L'utilisateur supprime une table.
+\item[3-] Un message indique que la table est bel et bien supprimée.
+\item[4-] La table supprimée ne fait plus partie de la liste.
+\item[5-] L'utilisateur recommence le scénario pour une supprimer une nouvelle table.
+\end{description}
+
+\subsection{Scénario alternatif}
+\begin{description}
+\item[1-a] La base de données ne contient aucune table, l'IHM est désactivée.
+\item[2-a] L'utilisateur supprime une table avec l'option \textit{CASCADE CONSTRAINT}.
+  \item[5-a] L'utilisateur a supprimé la dernière table, l'IHM se désactive.
+\end{description}
+
+\subsection{Scénario d'erreur}
+\begin{description}
+\item[1-b] La récupération des tables à échouée, un message indique pourquoi et l'IHM est désactivée.
+\item[3-a] La suppression de la table a échouée parce qu'elle ne peut pas être supprimée sans \textit{CASCADE CONSTRAINT}. Un message l'indique.
+\item[3-b] La suppression de la table a échouée, un message indique pourquoi.
+\end{description}
+

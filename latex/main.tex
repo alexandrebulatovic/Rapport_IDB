@@ -18,11 +18,14 @@
 \newcommand{\fontconsolas}[1]{\fontfamily{pag}\selectfont 
 #1
 }
+
 \newcommand{\exemple}[1]{\newline\newline
 \begin{center}
 \parbox{10cm}{\textcolor[rgb]{0.5,0.5,0.5}{\fontconsolas{#1}}}
 \end{center}
 }
+
+\newcommand{\sgbd}{\textbf{Système de Gestion de Base de Données}}
 %end define
 
 \title{Interfaces homme-machine pour gestion de bases de données.}
@@ -46,8 +49,11 @@
 \printglossaries
 
 \mainmatter
-\chapter*{Introduction}
+\chapter{Introduction}
 \input{introduction}
+
+\chapter{Structure}
+\input{metiers}
 
 \backmatter
 

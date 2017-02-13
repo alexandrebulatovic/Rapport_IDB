@@ -1,9 +1,9 @@
-\subtitle{Les classes métiers}
-Il nous a été nécessaire de créer des classes métiers représentant fidèlement le comportement 
+\subsection{Les classes métiers}
+Il nous a été nécessaire de créer des classes métiers représentant fidèlement le comportement réel des tables contenues dans n'importe quel \sgbd
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=14cm]{./images/metiers.eps}
+\includegraphics[width=13cm]{images/metier.png}
 \caption{Diagramme de classes métiers}
 \label{classes_metiers}
 \end{figure}
@@ -12,4 +12,5 @@ Il nous a été nécessaire de créer des classes métiers représentant fidèle
 Ces classes ont une particularité, c'est de pouvoir générer du SQL à partir de leurs attributs ou de différents arguments.
 Lorsqu'une table est supprimé, tous les attributs de la table sont détruits et toutes les contraintes composant les attributs et la table sont détruit également.
 Si un seul attribut est détruit, toutes les contraintes qui le compose sont détruites, ainsi, une contrainte \textbf{ForeignKeyConstraint} sera détruit même si elle concerne un second attribut
-\exemple{une fk1 composé de att1 et att2 pointant sur pk1 et pk2 respectivement. L'on supprime att1, alors la clé étrangère ne peut pas respecter la norme et la constrainte fk1 est supprimé}
+\exemple{une fk1 composé de att1 et att2 pointant sur pk1 et pk2 respectivement.
+\newline Si l'on supprime att1, alors la clé étrangère ne peut pas respecter la norme et la contrainte fk1 est supprimé}

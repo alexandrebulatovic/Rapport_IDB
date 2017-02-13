@@ -10,7 +10,7 @@
 \usepackage{graphicx}
 \usepackage{microtype}
 \usepackage{glossaries}
-\makeglossaries
+\makeglossaries %à la suite de la déclaration de package
 \input{glossaire}
 
 \title{Interfaces homme-machine pour gestion de bases de données.}
@@ -35,5 +35,8 @@
 
 \mainmatter
 \chapter*{Introduction}
-bonjour \gls{sgbd}
+\input{introduction}
+
+\backmatter
+
 \end{document}

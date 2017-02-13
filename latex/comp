@@ -1,0 +1,35 @@
+#!/bin/bash
+
+
+estTex()
+{
+    for tex in `ls *.tex`
+    do
+	
+	if [ $1 == $tex ] ; then
+	    return 1;
+	fi
+    done
+    return 0;
+}
+
+supprime()
+{
+rm *~;
+for fichier in `ls`
+do
+    estTex $fichier
+    if [ $? == 0 && $fichier != "comp" ] ; then
+	rm -f $fichier;
+    fi
+done
+}
+
+compile()
+{
+    pdflatex ${1}.tex && makeglossaries $1 && pdflatex ${1}.tex && evince ${1}.pdf & 
+}
+
+
+supprime;
+compile $1;

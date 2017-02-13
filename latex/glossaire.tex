@@ -11,11 +11,11 @@
 
 \newglossaryentry{bddr}{
         name={base de données relationnelle},
-        plural={bases de données relationelles},
+        plural={bases de données relationnelles},
         description={Abrégé \textit{BDR}. Il existe plusieurs types de \glspl{bdd}.
         Dans ce rapport, ne sont mentionnées que des bases de données \textit{relationnelles}.
         Les données sont stockées dans des \textit{tables}, c'est à dire des ensembles d'\textit{attributs} (ou \textit{colonnes}).
-        Chaque ligne d'une table (nommé \textit{tuple}) est identifiée par un attribut ou groupe d'attributs \underline{uniques} dans la table.
+        Chaque ligne d'une table (nommée \textit{tuple}) est identifiée par un attribut ou groupe d'attributs \underline{uniques} dans la table.
         Les tables sont reliées entre elles par ces groupes d'attributs uniques.
         Pour simplifier, on peut voir les tables comme des tableaux à une entrée : le nombre de colonnes est fixé, en revanche le nombre de lignes ne l'est pas}}
 
@@ -37,7 +37,7 @@
         first={Structured Query Language (SQL)}]
         {sql}
         {SQL}
-        {Structured Query Langage, un langage déclaratif et normé permettant d'utiliser les \gls{bddr}, largement inspiré par Codd en 1970 et devenu un standart aux Etats-Unis en 1984}
+        {Structured Query Langage, un langage déclaratif et normé permettant d'utiliser les \glspl{bddr}, largement inspiré par Codd en 1970 et devenu un standart aux Etats-Unis en 1984}
 
 \newacronym[first={Create, Read, Update, Delete (CRUD)}]
                            {crud}
@@ -60,3 +60,10 @@
         {name={requête SQL},
         plural={requêtes SQL},
         description=Une requête SQL est le nom couramment associé à du code SQL fonctionnel qui interroge la base de données}
+
+\newacronym[first={interface homme-machine (IHM)},
+			firstplural={interfaces homme-machine}]
+	{ihm}
+	{IHM}
+	{Interface Homme-Machine, l'ensemble des moyens mis en oeuvre par l'homme pour communiquer avec la machine.
+	Dans ce rapport, les IHM désignent les \textit{fenêtres} développées pour l'application}

@@ -1,23 +1,31 @@
-Les \gls{bdd} sont des outils permettant de stocker et retrouver des \glspl{data}, c'est à dire des valeurs brutes. Ces outils se trouvent au coeur des \glspl{si}, et sont donc indispensables aux entreprises.
+Les \glspl{bdd} sont des outils permettant de stocker et retrouver des \glspl{data}, c'est à dire des valeurs brutes. 
+Ces outils se trouvent au coeur des \glspl{si}, et sont indispensables aux entreprises.
 
-En informatique, les bases de données sont informatisée, définies et manipulées grâce à des logiciels nommés \glspl{sgbd}.
+En informatique, les bases de données sont numérisées, définies et manipulées grâce à des logiciels nommés \glspl{sgbd}.
 
-Il existe différents types de bases de données, mais le marché reste dominé par les \glspl{bddr} \footnote{\label{part_de_marché_relationnel}Classement des \glspl{sgbd} les plus populaires : \url{http://db-engines.com/en/ranking}}. Ces dernières sont gérées par des SGBD relationnels. Parmi les plus connus, on trouve :
-\begin{itemize}
-\item Oracle,
-\item MySQL,
-\item PostgreSQL.\\
-\end{itemize}
+Il existe différents types de bases de données, mais le marché reste dominé par les \glspl{bddr}\footnote{\label{part_de_marché_relationnel}
+Classement des \glspl{sgbd} les plus populaires : \url{http://db-engines.com/en/ranking}}. Ces dernières sont gérées par des SGBD relationnels (dit SGBDR) 
+dont les plus connus sont Oracle, MySQL et PostgreSQL.
 
-Ces logiciels proposent tous de définir et de manipuler des bases de données par le biais du \gls{sql}, un langage déclaratif et normé, implémenté par les SGBD avec des écarts vis à vis de ce que préconise la norme\footnote{\label{differences_implementation_sql_sqgbd}Comparer les documentations Oracle et MySQL pour modifier une table \url{https://docs.oracle.com/cd/B28359_01/server.111/b28286/statements_3001.htm} contre \url{https://dev.mysql.com/doc/refman/5.7/en/alter-table.html}}. De ce fait, deux SGBD distincts ne proposent pas \textit{exactement} le même SQL.
+Ces logiciels permettent de définir et de manipuler des bases de données par le biais du \gls{sql}, 
+langage déclaratif et normé qui reste le premier et le plus exhaustif des moyens de gérer une base de données relationnelle .
 
-Cela amène la problématique suivante : les bases de données relationnelles sont presques incontournables, et ne peuvent être utilisées qu'en ayant connaissance du langage SQL, ce dernier variant selon le SGBD choisi. 
+Mais le SQL est un langage informatique, ce qui constitue un frein pour les utilisateurs : s'ils ne connaissent pas
+le langage, ils ne peuvent pas utiliser de base de données.
 
-Ce projet propose une application permettant de manipuler une base de données relationnelle \textit{sans} avoir recours au SQL et sur n'importe quel SGBD.
+Certaines applications, comme \textit{Access} et \textit{LOBase} proposent une alternative au SQL grâce à des 
+\glspl{ihm}: il est possible de définir les données et de les manipuler par des clics de boutons, des glisser-déplacer ou encore de la saisie
+de texte non codé. 
 
-La figure \ref{sans_idb_schema} illustre l'utilisation habituelle des SGBD.
+Ce projet tuteuré propose une application permettant d'utiliser certaines fonctionnalités 
+des bases de données \underline{sans} 
+avoir recours au SQL, et ce sur n'importe quel SGBDR. Pour cela, elle propose une série d'IHM qui reprennent les fonctionnalités
+principales d'un SGBDR.
 
-La figure \ref{avec_idb_schema} illustre l'utilisation d'un SGBD avec l'application.
+Ce document présente les différentes phases de création de cette application : l'analyse, la conception, le développement et les tests.
+
+Afin de mieux situer l'application, la figure \ref{sans_idb_schema} montre l'utilisation classique d'un SGBD et 
+la figure \ref{avec_idb_schema} l'utilisation de l'application développée.
 
 \begin{figure}[!h]
   \centering

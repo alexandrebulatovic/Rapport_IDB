@@ -13,4 +13,4 @@ Ces classes ont une particularité, c'est de pouvoir générer du SQL à partir 
 Lorsqu'une table est supprimé, tous les attributs de la table sont détruits et toutes les contraintes composant les attributs et la table sont détruit également.
 Si un seul attribut est détruit, toutes les contraintes qui le compose sont détruites, ainsi, une contrainte \textbf{ForeignKeyConstraint} sera détruit même si elle concerne un second attribut
 \exemple{une fk1 composé de att1 et att2 pointant sur pk1 et pk2 respectivement.
-\newline Si l'on supprime att1, alors la clé étrangère ne peut pas respecter la norme et la constrainte fk1 est supprimé}
+\newline Si l'on supprime att1, alors la clé étrangère ne peut pas respecter la norme et la contrainte fk1 est supprimé}

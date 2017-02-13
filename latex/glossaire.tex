@@ -19,26 +19,39 @@
         Les tables sont reliées entre elles par ces groupes d'attributs uniques.
         Pour simplifier, on peut voir les tables comme des tableaux à une entrée : le nombre de colonnes est fixé, en revanche le nombre de lignes ne l'est pas}}
 
-\newglossaryentry{sgbd}{
-        name={système de gestion de base de données},
-        plural={systèmes de gestion de bases de données},
-        description={Abrégé \textit{SGBD}. Logiciel permettant de manipuler une base de données informatisée et relationnelles}}
-
 \newacronym[plural={LDD},
         first={Langage de Définition des Données},
-        firstplural={Langages de Définition des Données}]{ldd}{LDD}{
-                          Langage de Définition des Données, un sous-ensemble du langage \gls{sql} permettant de décrire la structure des tables et les relations entre elles. Très grossièrement, le LDD permet de définir les tables et leurs colonnes}
+        firstplural={Langages de Définition des Données}]
+        {ldd}
+        {LDD}
+        {Langage de Définition des Données, un sous-ensemble du langage \gls{sql} permettant de décrire la structure des tables et les relations entre elles. Très grossièrement, le LDD permet de définir les tables et leurs colonnes}
 
-\newacronym[plural=LMD,
-        first={Langage de définition des données},
-        firstplural={Langages de définiton des données}]{lmd}{LMD}{Langage de Manipulation des Données, un sous-ensemble du \gls{sql} permettant d'effectuer les opérations \gls{crud} sur les données contenues dans les tables}
+\newacronym[plural={LMD},
+        first={Langage de définition des données (LMD)},
+        firstplural={Langages de définiton des données}]
+        {lmd}
+        {LMD}
+        {Langage de Manipulation des Données, un sous-ensemble du \gls{sql} permettant d'effectuer les opérations \gls{crud} sur les données contenues dans les tables}
 
 \newacronym[plural={SQL},
-        first={Structured Query Language}]{sql}{SQL}{Structured Query Langage, un langage déclaratif et normé permettant d'utiliser les \gls{bddr}, largement inspiré par Codd en 1970 et devenu un standart aux Etats-Unis en 1984}
+        first={Structured Query Language (SQL)}]
+        {sql}
+        {SQL}
+        {Structured Query Langage, un langage déclaratif et normé permettant d'utiliser les \gls{bddr}, largement inspiré par Codd en 1970 et devenu un standart aux Etats-Unis en 1984}
 
-\newacronym[first={Create, Read, Update, Delete}]{crud}{CRUD}{Create, Read, Update, Delete sont les quatre opérations basiques à effectuer sur des enregistrements de données, respectivement : en ajouter des nouveaux, les lire, les mettre à jour et les effacer.}
+\newacronym[first={Create, Read, Update, Delete (CRUD)}]
+                           {crud}
+                           {CRUD}
+                           {Create, Read, Update, Delete sont les quatre opérations basiques à effectuer sur des enregistrements de données, respectivement : en ajouter des nouveaux, les lire, les mettre à jour et les effacer.}
 
-\newglossaryentry{si}{
-        name={système d'information},
-        plural={systèmes d'informations},
-        description={Le système d'information est un ensemble organisé de ressources qui permet de collecter, stocker, traiter et distribuer de l'information}}
+\newacronym[first={système d'information (SI)},
+                           firstplural={systèmes d'information (SI)}]
+                           {si}
+                           {SI}
+                           {Le Système d'Information est un ensemble organisé de ressources qui permet de collecter, stocker, traiter et distribuer de l'information}
+
+\newacronym[first={système de gestion de base de données (SGBD)},
+                           firstplural={systèmes de gestion de base de données (SGBD)}]
+                           {sgbd}
+                           {SGBD}
+                           {Logiciel permettant la définition et la manipulation des bases de données. Dans ce rapport, ne sont mentionnés que des logiciel agissant sur des bases de données relationnelles}

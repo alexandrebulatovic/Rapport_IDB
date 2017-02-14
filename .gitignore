@@ -1,4 +1,5 @@
 *.dia
+*.dia.autosave
 *.pdf
 *.aux
 *.glo

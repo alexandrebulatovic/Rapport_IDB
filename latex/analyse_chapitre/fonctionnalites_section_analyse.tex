@@ -1,0 +1,77 @@
+\section{Les fonctionnalités d'un SGBD}
+L'application propose des fonctionnalités vues durant le cursus à l'IUT.
+
+\subsection{Le \gls{ldd}}
+Le langage de définition des données permet de structurer une base de données.
+Il ne s'intêresse pas aux données contenues dans les tables
+\footnote{\label{interet_ldd}Le LDD prend en compte les données contenues dans les tables et peut agir dessus, mais c'est une conséquence, pas son rôle.}, mais aux tables elles même. Le LDD est séparé en trois instructions:
+
+\subsubsection{CREATE TABLE}
+Permet de créer une \gls{table}. Dans un SGBD, les tables sont nommées, chaque nom est unique.
+Une table est créée avec au moins un attribut dont il faut préciser le type de données (texte, nombre, date etc.) et la taille.
+Des \glspl{constraint} supplémentaires peuvent être ajoutées, comme par exemple les \glspl{primarykey} \footnote{\label{contrainte_clée_primaire}Voir glossaire.}ou encore des \textit{NOT NULL}.
+
+La \gls{query} suivante montre la création d'une table nommée PERSONNES, qui contient les attributs \textit{idpersonne}, \textit{nompersonne}, \textit{taillepersonne} et \textit{datenaissancepersonne}.
+
+  \begin{lstlisting}
+    CREATE TABLE PERSONNES
+    (
+    idpersonne CHAR(5),
+    nompersonne VARCHAR(30),
+    taillepersonne NUMBER,
+    datenaissancepersonne DATE
+    );
+  \end{lstlisting}
+
+
+\subsubsection{ALTER TABLE}
+Permet de revenir sur ce qui a été fait avec CREATE TABLE.
+L'instruction permet d'ajouter, supprimer ou modifier des \glspl{attribut}, des contraintes, des index...
+
+Cette instruction se comporte différemment selon qu'une table soit vide ou remplie de lignes de données (\glspl{tuple}).
+Par exemple, ajouter une contrainte NOT NULL sur une colonne possédant déjà des tuples nuls n'est pas possible. Ce problème n'existe pas sur une table vide.
+
+La requête SQL suivante modifie la table \textit{PERSONNES} pour y ajouter une contrainte de clée primaire nommée \textit{pk\_personnes} sur l'attribut \textit{idpersonne}.
+
+\begin{lstlisting}
+  ALTER TABLE PERSONNES
+  (
+  ADD CONSTRAINT pk_personnes PRIMARY KEY (idpersonne)
+  );
+\end{lstlisting}
+
+\subsubsection{DROP TABLE}
+Permet de supprimer une table et les données qu'elle contient.
+Dans une base de données relationnelles, les tables sont liées entre elles par des attributs.
+La supression d'une table peut entraîner la supression de données dans d'autres tables, en fonction du schéma relationnel de la base.
+
+La requête SQL suivante supprime la table \textit{PERSONNES} de la base de données.
+\begin{lstlisting}
+  DROP TABLE PERSONNES;
+\end{lstlisting}
+
+\subsection{Le \gls{lmd}}
+Le langage de manipulation des données permet d'affectuer des actions de \gls{crud} sur ce que contiennent les tables.
+En d'autres termes, il agit sur les tuples.
+
+\subsubsection{Create}
+Il d'agit de créer un nouveau tuple dans une table.
+La requête SQL suivante permet d'ajouter un tuple de clée primaire \textit{00001} dans la table \textit{PERSONNES}.
+\begin{lstlisting}
+  INSERT INTO PERSONNES
+  (idpersonne, nompersonne, taillepersonne, datenaissancepersonne)
+  VALUES
+  ('00001', 'DUPONT', 'Jean', '06/08/1985');
+\end{lstlisting}
+
+\subsubsection{Read}
+Il s'agit de récupérer, lire, croiser des données que contiennent les tables.
+Les requêtes SQL  "read" peuvent être très complexes.
+Celle qui est écrite juste après est simple et permet de retrouver le nom de la \textit{PERSONNES} numéro "00001".
+\begin{lstlisting}
+  SELECT PERSONNES.nompersonne
+  FROM PERSONNES
+  WHERE PERSONNES.idpersonne = '00001';
+\end{lstlisting}
+
+\subsubsection{Update}

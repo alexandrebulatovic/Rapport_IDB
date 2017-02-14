@@ -59,7 +59,8 @@ Il d'agit de créer un nouveau tuple dans une table.
 La requête SQL suivante permet d'ajouter un tuple de clée primaire \textit{00001} dans la table \textit{PERSONNES}.
 \begin{lstlisting}
   INSERT INTO PERSONNES
-  (idpersonne, nompersonne, taillepersonne, datenaissancepersonne)
+  (idpersonne, nompersonne, taillepersonne,
+  datenaissancepersonne)
   VALUES
   ('00001', 'DUPONT', 'Jean', '06/08/1985');
 \end{lstlisting}
@@ -67,6 +68,8 @@ La requête SQL suivante permet d'ajouter un tuple de clée primaire \textit{000
 \subsubsection{Read}
 Il s'agit de récupérer, lire, croiser des données que contiennent les tables.
 Les requêtes SQL  "read" peuvent être très complexes.
+Certains SGBD proposent des \glspl{qbe}
+\footnote{Access, LOBase, phpMyAdmin...}pour créer ces requêtes sans manipuler de SQL.
 Celle qui est écrite juste après est simple et permet de retrouver le nom de la \textit{PERSONNES} numéro "00001".
 \begin{lstlisting}
   SELECT PERSONNES.nompersonne
@@ -75,3 +78,25 @@ Celle qui est écrite juste après est simple et permet de retrouver le nom de l
 \end{lstlisting}
 
 \subsubsection{Update}
+Il s'agit de modifier un ou plusieurs tuples qui existent déjà dans la base de données.
+La requête SQL suivante remplace le nom de famille de la \textit{PERSONNES} "00001" par "Robert".
+\begin{lstlisting}
+  UPDATE PERSONNES
+  SET nompersonne = 'Robert'
+  WHERE idpersonne = '00001';
+\end{lstlisting}
+
+\subsubsection{DELETE}
+Il s'agit de supprimer un ou plusieurs tuples.
+La requête SQL suivante supprime les tuples des \textit{PERSONNES} qui s'appellent "Jean".
+\begin{lstlisting}
+  DELETE FROM PERSONNES
+  WHERE prenompersonne = "Jean";
+\end{lstlisting}
+
+\subsection{Le Langage de Controle des Données (LCD)}
+Cet aspect du SQL n'est pas demandé pour l'application et n'est pas traité.
+
+\subsection{Transaction ACID}
+Cet aspect des bases de données n'est pas demandé pour l'application et n'est pas traité.
+En d'autres termes, une base de données ne peut être utilisée que par une seule personne à fois, sinon elle perd sa cohérence.

@@ -15,18 +15,44 @@ L'application propose des fonctionnalités vues durant le cursus à l'IUT.
 \subsection{Le \gls{ldd}}
 Le langage de définition des données permet de structurer une base de données.
 Il ne s'intêresse pas aux données contenues dans les tables
-\footnote{\label{interet_ldd}le LDD prend en compte les données contenues dans les tables et peut agir dessus, mais ce n'est pas son rôle}, mais aux tables elles même. Le LDD est séparé en trois instructions:
+\footnote{\label{interet_ldd}le LDD prend en compte les données contenues dans les tables et peut agir dessus, mais c'est une conséquence}, mais aux tables elles même. Le LDD est séparé en trois instructions:
 
 \subsubsection{CREATE TABLE}
 Permet de créer une \gls{table}. Dans un SGBD, les tables sont nommées, chaque nom est unique.
 Une table est créée avec au moins un attribut dont il faut préciser le type de données (texte, nombre, date etc.) et la taille
 \footnote{\label{oracle_create_table_url} Oracle CREATE TABLE : \url{http://docs.oracle.com/cd/B19306_01/server.102/b14200/statements_7002.htm}}.
 Des \glspl{constraint} supplémentaires peuvent être ajoutées, comme par exemple les \glspl{primarykey} \footnote{\label{contrainte_clée_primaire}Voir glossaire.}ou encore des \textit{NOT NULL}.
-%TODO : image de CREATE TABLE SQL
+
+La \gls{query} suivante montre la création d'une table nommée PERSONNES, qui contient les attributs \textit{idpersonne}, \textit{nompersonne}, \textit{taillepersonne} et \textit{datenaissancepersonne}.
+
+  \begin{lstlisting}
+    CREATE TABLE PERSONNES
+    (
+    idpersonne CHAR(5),
+    nompersonne VARCHAR(30),
+    taillepersonne NUMBER,
+    datenaissancepersonne DATE
+    );
+  \end{lstlisting}
+
 
 \subsubsection{ALTER TABLE}
 Permet de revenir sur ce qui a été fait avec CREATE TABLE.
-L'instruction permet d'ajouter, supprimer ou modifier des colonnes des contraintes, des index...
+L'instruction permet d'ajouter, supprimer ou modifier des \glspl{attribut}, des contraintes, des index...
 
-Cette instruction se comporte différemment selon qu'une table soit vide ou remplie de données (\glspl{tuple}).
+Cette instruction se comporte différemment selon qu'une table soit vide ou remplie de lignes de données (\glspl{tuple}).
 Par exemple, ajouter une contrainte NOT NULL sur une colonne possédant déjà des tuples nuls n'est pas possible. Ce problème n'existe pas sur une table vide.
+
+La requête SQL suivante
+
+\begin{lstlisting}
+  ALTER TABLE PERSONNES
+  (
+  
+  );
+\end{lstlisting}
+
+\subsubsection{DROP TABLE}
+Permet de supprimer une table et les données qu'elle contient.
+Dans une base de données relationnelles, les tables sont liées entre elles par des attributs.
+La supression d'une table entraine la supression de données dans d'autres tables, en fonction du schéma relationnel de la base.

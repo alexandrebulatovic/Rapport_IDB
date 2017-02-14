@@ -1,3 +1,23 @@
+\newglossaryentry{table}
+        {name={table},
+        plural={tables},
+        description={Ensemble d'\textit{attributs}}).
+        dans une base de données relationnelle, chaque ligne d'une table (nommée \textit{tuple}) est identifiée
+        par un attribut ou groupe d'attributs
+        uniques dans la table, que l'on nomme \textit{clée primaire}.
+        Pour simplifier, on peut voir les tables comme des tableaux à une entrée : le nombre de colonnes est fixé, en revanche le nombre de lignes ne l'est pas}}
+
+\newglossaryentry{tuple}
+        {name={tuple},
+        plural={tuples},
+        description={Une ligne de données dans une table. Une table contient de 0 à n tuples}}
+
+\newglossaryentry{attribut}
+        {name={attribut},
+        plural={attributs},
+        description={Un nom de colonne dans une table, également appelé \textit{champ}.
+        Une table contient au moins un attribut}}
+        
 \newglossaryentry{data}{
         name={donnée},
         plural={données},
@@ -6,51 +26,48 @@
 \newglossaryentry{bdd}{
         name={base de données},
         plural={bases de données},
-        description={Abrégé \textit{BD}. Outil permettant de stocker et de retrouver des ensembles de \glspl{data}.
-        Dans ce rapport, ne sont mentionnées que des bases de données informatisées}}
+        description={Abrégé \textit{BD}. Outil permettant de stocker et de retrouver des ensembles des données.
+        Dans ce rapport, ne sont mentionnées que des bases de données informatisées et relationelles}}
 
 \newglossaryentry{bddr}{
         name={base de données relationnelle},
         plural={bases de données relationnelles},
-        description={Abrégé \textit{BDR}. Il existe plusieurs types de \glspl{bdd}.
+        description={Abrégé \textit{BDR}. Il existe plusieurs types de bases de données.
         Dans ce rapport, ne sont mentionnées que des bases de données \textit{relationnelles}.
-        Les données sont stockées dans des \textit{tables}, c'est à dire des ensembles d'\textit{attributs} (ou \textit{colonnes}).
-        Chaque ligne d'une table (nommée \textit{tuple}) est identifiée par un attribut ou groupe d'attributs \underline{uniques} dans la table.
-        Les tables sont reliées entre elles par ces groupes d'attributs uniques.
-        Pour simplifier, on peut voir les tables comme des tableaux à une entrée : le nombre de colonnes est fixé, en revanche le nombre de lignes ne l'est pas}}
+        Les données sont stockées dans des \textit{tables}, et les tables sont reliées entre elles par leurs clées primaires}}
 
 \newacronym[plural={LDD},
         first={Langage de Définition des Données},
         firstplural={Langages de Définition des Données}]
         {ldd}
         {LDD}
-        {Langage de Définition des Données, un sous-ensemble du langage \gls{sql} permettant de décrire la structure des tables et les relations entre elles. Très grossièrement, le LDD permet de définir les tables et leurs colonnes}
+        {Langage de Définition des Données, un sous-ensemble du langage SQL permettant de décrire la structure des tables et les relations entre elles. Très grossièrement, le LDD permet de définir les tables et leurs colonnes}
 
 \newacronym[plural={LMD},
-        first={Langage de définition des données (LMD)},
-        firstplural={Langages de définiton des données}]
+        first={Langage de Manipulation des Données (LMD)},
+        firstplural={Langages de Manipulation des données}]
         {lmd}
         {LMD}
-        {Langage de Manipulation des Données, un sous-ensemble du \gls{sql} permettant d'effectuer les opérations \gls{crud} sur les données contenues dans les tables}
+        {Langage de Manipulation des Données, un sous-ensemble du SQL permettant d'effectuer les opérations CRUD sur les données contenues dans les tables}
 
 \newacronym[plural={SQL},
         first={Structured Query Language (SQL)}]
         {sql}
         {SQL}
-        {Structured Query Langage, un langage déclaratif et normé permettant d'utiliser les \glspl{bddr}, largement inspiré par Codd en 1970 et devenu un standart aux Etats-Unis en 1984}
+        {Structured Query Langage, un langage déclaratif et normé permettant d'utiliser les bases de données relationelles, largement inspiré par Codd en 1970 et devenu un standart aux Etats-Unis en 1984}
 
 \newacronym[first={Create, Read, Update, Delete (CRUD)}]
                            {crud}
                            {CRUD}
                            {Create, Read, Update, Delete sont les quatre opérations basiques à effectuer sur des enregistrements de données, respectivement : en ajouter des nouveaux, les lire, les mettre à jour et les effacer.}
 
-\newacronym[first={système d'information (SI)},
+\newacronym[first={système d'Information (SI)},
                            firstplural={systèmes d'information (SI)}]
                            {si}
                            {SI}
                            {Le Système d'Information est un ensemble organisé de ressources qui permet de collecter, stocker, traiter et distribuer de l'information}
 
-\newacronym[first={système de gestion de base de données (SGBD)},
+\newacronym[first={Système de Gestion de Base de Données (SGBD)},
                            firstplural={systèmes de gestion de base de données (SGBD)}]
                            {sgbd}
                            {SGBD}
@@ -59,11 +76,23 @@
 \newglossaryentry{query}
         {name={requête SQL},
         plural={requêtes SQL},
-        description=Une requête SQL est le nom couramment associé à du code SQL fonctionnel qui interroge la base de données}
+        description={Une requête SQL est le nom couramment associé à du code SQL fonctionnel qui interroge la base de données}}
 
-\newacronym[first={interface homme-machine (IHM)},
+\newacronym[first={Interface Homme-Machine (IHM)},
 			firstplural={interfaces homme-machine}]
 	{ihm}
 	{IHM}
 	{Interface Homme-Machine, l'ensemble des moyens mis en oeuvre par l'homme pour communiquer avec la machine.
 	Dans ce rapport, les IHM désignent les \textit{fenêtres} développées pour l'application}
+
+\newglossaryentry{constraint}
+        {name={contrainte},
+        plural={contraintes},
+        description={Restriction sur la saisie des données. Elles sont définies en SQL}}
+
+\newglossaryentry{primarykey}
+        {name={clée primaire},
+        plural={clées primaires},
+        description={Contrainte posée sur un attribut ou groupe d'attributs d'une table, les rendant identifiants, uniques et non nuls}}
+
+

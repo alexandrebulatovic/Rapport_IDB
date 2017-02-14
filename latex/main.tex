@@ -14,19 +14,7 @@
 \makeglossaries %à la suite de la déclaration de package
 \input{glossaire}
 
-%define
-\newcommand{\fontconsolas}[1]{\fontfamily{pag}\selectfont 
-#1
-}
-
-\newcommand{\exemple}[1]{\newline\newline
-\begin{center}
-\parbox{10cm}{\textcolor[rgb]{0.5,0.5,0.5}{\fontconsolas{#1}}}
-\end{center}
-}
-
-\newcommand{\sgbd}{\textbf{Système de Gestion de Base de Données}}
-%end define
+\input{commandes}
 
 \title{Interfaces homme-machine pour gestion de bases de données.}
 \author{ALCANTUD Gaël \\ BULATOVIC Alexandre \\ MAURY Adrian \\ UGOLINI Romain \\ \\tuteur : PALLEJA Xavier}
@@ -52,8 +40,10 @@
 \chapter{Introduction}
 \input{introduction}
 
+\chapter{Analyse}
+\input{analyse.tex}
 
-\chapter{Structure}
+\chapter{Conception}
 \input{metiers}
 
 \chapter{Manuel d'utilisation}

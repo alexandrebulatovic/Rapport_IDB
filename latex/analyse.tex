@@ -1,0 +1,32 @@
+\section{Contexte}
+Comme mentionné précédemment, les SGBDR sont les plus utilisés des SGBD. Ils permettent de manipuler des bases de données relationnelles
+par le biais du langage SQL. Puisque ce langage nécessite un certain apprentissage, un utilisateur ne le connaissant pas ne peut pas se servir
+d'une base de données.
+
+Ce projet tuteuré demande le développement d'une application permettant d'utiliser une base de données :
+\begin{itemize}
+\item sans utiliser le SQL,
+\item sur n'importe quel SGBD.
+\end{itemize}
+
+\section{Les fonctionnalités d'un SGBD}
+L'application propose des fonctionnalités vues durant le cursus à l'IUT.
+
+\subsection{Le \gls{ldd}}
+Le langage de définition des données permet de structurer une base de données.
+Il ne s'intêresse pas aux données contenues dans les tables
+\footnote{\label{interet_ldd}le LDD prend en compte les données contenues dans les tables et peut agir dessus, mais ce n'est pas son rôle}, mais aux tables elles même. Le LDD est séparé en trois instructions:
+
+\subsubsection{CREATE TABLE}
+Permet de créer une \gls{table}. Dans un SGBD, les tables sont nommées, chaque nom est unique.
+Une table est créée avec au moins un attribut dont il faut préciser le type de données (texte, nombre, date etc.) et la taille
+\footnote{\label{oracle_create_table_url} Oracle CREATE TABLE : \url{http://docs.oracle.com/cd/B19306_01/server.102/b14200/statements_7002.htm}}.
+Des \glspl{constraint} supplémentaires peuvent être ajoutées, comme par exemple les \glspl{primarykey} \footnote{\label{contrainte_clée_primaire}Voir glossaire.}ou encore des \textit{NOT NULL}.
+%TODO : image de CREATE TABLE SQL
+
+\subsubsection{ALTER TABLE}
+Permet de revenir sur ce qui a été fait avec CREATE TABLE.
+L'instruction permet d'ajouter, supprimer ou modifier des colonnes des contraintes, des index...
+
+Cette instruction se comporte différemment selon qu'une table soit vide ou remplie de données (\glspl{tuple}).
+Par exemple, ajouter une contrainte NOT NULL sur une colonne possédant déjà des tuples nuls n'est pas possible. Ce problème n'existe pas sur une table vide.

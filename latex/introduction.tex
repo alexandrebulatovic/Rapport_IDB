@@ -13,16 +13,20 @@ langage déclaratif et normé qui reste le premier et le plus exhaustif des moye
 Mais le SQL est un langage informatique, ce qui constitue un frein pour les utilisateurs : s'ils ne connaissent pas
 le langage, ils ne peuvent pas utiliser de base de données.
 
-Certaines applications, comme \textit{Access} et \textit{LOBase} proposent une alternative au SQL grâce à des 
-\glspl{ihm}: il est possible de définir les données et de les manipuler par des clics de boutons, des glisser-déplacer ou encore de la saisie
+Certaines applications, comme \textit{Access}, \textit{LOBase} ou encore \textit{phpMyAdmin} proposent une alternative au SQL grâce à des 
+\glspl{ihm}: il est possible de définir les données ou de les manipuler par des clics de boutons, des glisser-déplacer, des cases à cocher ou encore de la saisie
 de texte non codé. 
 
-Ce projet tuteuré propose une application permettant d'utiliser certaines fonctionnalités 
+En suivant cette optique, le but de ce projet tuteuré est de réaliser une application permettant d'utiliser certaines fonctionnalités 
 des bases de données \underline{sans} 
-avoir recours au SQL, et ce sur n'importe quel SGBDR. Pour cela, elle propose une série d'IHM qui reprennent les fonctionnalités
-principales d'un SGBDR.
+avoir recours au SQL, et ce sur n'importe quel SGBDR. Pour cela, elle propose une série d'IHM qui en reprennent certaines fonctionnalités,
+à savoir le \gls{ldd} et le \gls{lmd}.
+
+Les utilisateurs finaux de l'application sont les élèves de première année du DUT Informatique, pour
+les aider à découvrir les bases de données.
 
 Ce document présente les différentes phases de création de cette application : l'analyse, la conception, le développement et les tests.
+Un manuel d'utilisation est disponible dans les dernières pages.
 
 Afin de mieux situer l'application, la figure \ref{sans_idb_schema} montre l'utilisation classique d'un SGBD et 
 la figure \ref{avec_idb_schema} l'utilisation de l'application développée.

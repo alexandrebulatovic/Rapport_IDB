@@ -9,7 +9,7 @@ Il ne s'intêresse pas aux données contenues dans les tables
 \subsubsection{CREATE TABLE}
 Permet de créer une \gls{table}. Dans un SGBD, les tables sont nommées, chaque nom est unique.
 Une table est créée avec au moins un attribut dont il faut préciser le type de données (texte, nombre, date etc.) et la taille.
-Des \glspl{constraint} supplémentaires peuvent être ajoutées, comme par exemple les \glspl{primarykey} \footnote{\label{contrainte_clée_primaire}Voir glossaire.}ou encore des \textit{NOT NULL}.
+Des \glspl{constraint} supplémentaires peuvent être ajoutées : les \textit{\glspl{primarykey}} \footnote{\label{contrainte_clée_primaire}Voir glossaire.}, les attributs \textit{not null} et groupes d'attributs \textit{uniques}.
 
 La \gls{query} suivante montre la création d'une table nommée PERSONNES, qui contient les attributs \textit{idpersonne}, \textit{nompersonne}, \textit{taillepersonne} et \textit{datenaissancepersonne}.
 
@@ -86,7 +86,7 @@ La requête SQL suivante remplace le nom de famille de la \textit{PERSONNES} "00
   WHERE idpersonne = '00001';
 \end{lstlisting}
 
-\subsubsection{DELETE}
+\subsubsection{Delete}
 Il s'agit de supprimer un ou plusieurs tuples.
 La requête SQL suivante supprime les tuples des \textit{PERSONNES} qui s'appellent "Jean".
 \begin{lstlisting}

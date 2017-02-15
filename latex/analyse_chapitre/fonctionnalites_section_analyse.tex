@@ -1,7 +1,9 @@
-\section{Les fonctionnalités d'un SGBD}
-L'application propose des fonctionnalités vues durant le cursus à l'IUT.
+\section{Les fonctionnalités}
+L'application propose des fonctionnalités des SGBD vues durant le cursus à l'IUT.
+Un exemple de requête SQL est indiqué pour chaque fonctionnalité.
+L'utilisateur n'a pas à écrire ces codes pour gérer sa base de données.
 
-\subsection{Le \gls{ldd}}
+\subsection{Le Langage de Définition des Données (LDD)}
 Le langage de définition des données permet de structurer une base de données.
 Il ne s'intêresse pas aux données contenues dans les tables
 \footnote{\label{interet_ldd}Le LDD prend en compte les données contenues dans les tables et peut agir dessus, mais c'est une conséquence, pas son rôle.}, mais aux tables elles même. Le LDD est séparé en trois instructions:
@@ -50,7 +52,7 @@ La requête SQL suivante supprime la table \textit{PERSONNES} de la base de donn
   DROP TABLE PERSONNES;
 \end{lstlisting}
 
-\subsection{Le \gls{lmd}}
+\subsection{Le Langage de Manipulation des Données (LMD)}
 Le langage de manipulation des données permet d'affectuer des actions de \gls{crud} sur ce que contiennent les tables.
 En d'autres termes, il agit sur les tuples.
 
@@ -78,7 +80,7 @@ Celle qui est écrite juste après est simple et permet de retrouver le nom de l
 \end{lstlisting}
 
 \subsubsection{Update}
-Il s'agit de modifier un ou plusieurs tuples qui existent déjà dans la base de données.
+Il s'agit de modifier un ou plusieurs tuples qui existent déjà dans la table.
 La requête SQL suivante remplace le nom de famille de la \textit{PERSONNES} "00001" par "Robert".
 \begin{lstlisting}
   UPDATE PERSONNES
@@ -99,4 +101,18 @@ Cet aspect du SQL n'est pas demandé pour l'application et n'est pas traité.
 
 \subsection{Transaction ACID}
 Cet aspect des bases de données n'est pas demandé pour l'application et n'est pas traité.
-En d'autres termes, une base de données ne peut être utilisée que par une seule personne à fois, sinon elle perd sa cohérence.
+En d'autres termes, une base de données géré par l'application ne peut être utilisée que par une seule personne à fois, sinon elle perd sa cohérence.
+
+\subsection{Résumé des fonctionnalités}
+L'application permet de :
+\begin{itemize}
+\item créer une table,
+\item modifier une table,
+\item supprimer une table,
+\item ajouter des tuples,
+\item croiser des données,
+\item modifier des tuples,
+\item supprimer des tuples.
+\end{itemize}
+
+Les fonctionalités précédentes sont utilisables sans connaissance du SQL.

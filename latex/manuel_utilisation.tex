@@ -1,7 +1,8 @@
-L'application se lance lors d'un double clique sur l'exécutable.
+L'application se lance sur un double-clic sur l'exécutable.
 
 \section{Se connecter}
-La première fen\^etre à apparaitre est l'interface de connexion (figure \ref{se_connecter_gui}).
+\subsection{IHM de connexion}
+La première fen\^etre permet de se connecter au SGBD (figure \ref{se_connecter_gui}).
 \begin{figure}[!h]
 \centering
 \includegraphics[width=10cm]{./images/manuel/se_connecter.jpg}
@@ -9,21 +10,22 @@ La première fen\^etre à apparaitre est l'interface de connexion (figure \ref{s
 \label{se_connecter_gui}
 \end{figure}
 
-Afin de se connecter il faut renseigner les différents champs présents dans la fen\^etre.
+Pour se connecter, renseigner les différents champs présents dans la fen\^etre.
 
 \begin{enumerate}
-\item choix du \glspl{sgbd}* (Oracle, MySQL).
-\item Adresse IP du serveur ou est stockée votre base de données.
+\item choix du \gls{sgbd}* (Oracle, MySQL).
+\item Adresse IP du serveur où est stockée votre base de données.
 \item Nom d'utilisateur utilisé pour vous connecter à votre base de données. 
 \item Mot de passe utilisé pour vous connecter à votre base de données.
 \item Nom de la base de données.
 \item Numéros de port du serveur ou est stockée votre base de données.
-\item Cliquer sur le bouton \textbf{se connecter} pour tenter de se connecter au serveur.
+\item Cliquer sur le bouton \textbf{se connecter} pour vous connecter au serveur.
 \end{enumerate}
 
-Connexion aux serveurs de l'IUT si vous \^etes étudiant :\\
+\subsection{Connexion aux serveurs de l'IUT}
+Si vous êtes un étudiant de l'IUT de Montpellier.
 
-\textbf{Oracle}
+\subsubsection{Oracle}
 \begin{itemize}
 \item SGBD : Oracle
 \item Adresse IP : 162.38.222.149
@@ -33,7 +35,7 @@ Connexion aux serveurs de l'IUT si vous \^etes étudiant :\\
 \item Numéros de port : 1521 \\
 \end{itemize}
 
-\textbf{MySQL}
+\subsubsection{MySQL}
 \begin{itemize}
 \item SGBD : MySQL
 \item Adresse IP : 162.38.222.142
@@ -62,26 +64,23 @@ Dans le menu principal de l'application, cliquer sur le bouton \textbf{\glspl{ld
 \item Type - \textit{ex : VARCHAR2}
 \item Taille - \textit{ex : 15}
 \item A cocher pour que l'attribut ne soit jamais null.
-\item A cocher pour que l'attribut soit une clé primaire de votre table.
+\item A cocher pour que l'attribut soit membre de la clée primaire de votre table.
 \item Cliquer sur le bouton \textbf{Ajouter l'attribut} pour tenter d'ajouter un attribut à la table.
 \end{enumerate}
 
 \item Gestion des attributs ajoutés :
 \begin{enumerate}
-\item Tableau contenant les attributs ajoutés avec le bouton <Ajouter l'attribut>.
+\item Tableau contenant les attributs ajoutés avec le bouton \textbf{Ajouter l'attribut}.
 \item Cliquer sur le bouton \textbf{Supprimer l'attribut} pour supprimer l'attribut sélectionné dans le tableau.
 \item Cliquer sur le bouton \textbf{Modifier l'attribut} pour modifier l'attribut sélectionné dans le tableau. 
 Les caractéristiques de l'attribut sélectionné sont à modifier dans la zone de gestion des caractéristiques d'un attribut. 
 Vous pouvez ensuite valider ou annuler votre modification.
-\item Cliquer sur les boutons \textbf{UP/DOWN} pour modifier l'odre des attributs dans le tableau. 
+\item Cliquer sur les boutons \textbf{UP/DOWN} pour modifier l'ordre des attributs dans le tableau. 
 \item Cliquer sur le bouton \textbf{Reset} pour remettre à zéro la fen\^etre de création.
 \end{enumerate}
 
-\item Cliquer sur le bouton \textbf{Créer la table} pour tenter la création de la table.
+\item Cliquer sur le bouton \textbf{Créer la table} pour créer la table.
 \end{enumerate}
-
-
-
 
 
 \section{Modifier une table}
@@ -97,9 +96,9 @@ Dans le menu principal de l'application, cliquer sur le bouton \textbf{LDD : mod
 
 Cette fenêtre est identique à la fenêtre de création d'une table, à la différence qu'il est possible de sélectionner une table déjà existante dans la \bdd. 
 
-Il est possible de modifier une table existante avec le bouton \textbf{modifier}, sans perdre de données mais il est possible que certaines soient perdus lors de la modification :
+Il est possible de modifier une table existante avec le bouton \textbf{modifier}, sans perdre de données mais il est possible que certaines soient perdues lors de la modification, notamment dans les cas suivants :
 \begin{itemize}
-\item suppression d'un attribut clé étrangère couplé avec un second attribut
+\item suppression d'un attribut clée étrangère couplé avec un second attribut
 \item modification du type de l'attribut pouvant altérer les données.
 \end{itemize}
 
@@ -108,7 +107,7 @@ Il est possible de modifier une table existante avec le bouton \textbf{modifier}
 
 
 \section{Supprimer une table}
-Dans le menu principal de l'application, cliquer sur le bouton \textbf{LDD : supprimer tables} pour ouvrir la fen\^etre de suppression de tables (figure \ref{supprimer_table_gui}).
+Dans le menu principal de l'application, cliquer sur le bouton \textbf{LDD : supprimer tables} ouvre la fen\^etre de suppression de tables (figure \ref{supprimer_table_gui}).
 
 \begin{figure}[!h]
 \centering
@@ -148,11 +147,11 @@ Une fenêtre (figure \ref{sql_result_gui}) s'ouvre indiquant le résultat de la 
 
 \begin{enumerate}
 \item Résultat de la requ\^ete.
-\item Cliquer sur le bouton \textbf{OK} pour fermer la fen\^tre de résultat.
+\item Cliquer sur le bouton \textbf{OK} pour fermer la fenêtre de résultat.
 \end{enumerate}
 
 \section{CRUD les tuples des tables}
-Dans le menu principal de l'application, cliquer sur le bouton \textbf{\glspl{crud}}* pour ouvrir la fen\^etre de gestion des \glspl{tuple}* des tables (figure \ref{crud_gui}).
+Dans le menu principal de l'application, cliquer sur le bouton \textbf{\gls{crud}}* pour ouvrir la fen\^etre de gestion des \glspl{tuple}* des tables (figure \ref{crud_gui}).
 \begin{figure}[!h]
 \centering
 \includegraphics[width=12cm]{./images/manuel/crud.jpg}

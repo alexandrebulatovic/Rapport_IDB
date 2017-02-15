@@ -1,18 +1,18 @@
 L'application se lance lors d'un double clique sur l'exécutable.
 
 \section{Se connecter}
-La première fen\^etre à apparaitre est l'interface de connexion ci-dessous :
+La première fen\^etre à apparaitre est l'interface de connexion (figure \ref{se_connecter_gui}).
 \begin{figure}[!h]
 \centering
 \includegraphics[width=10cm]{./images/manuel/se_connecter.jpg}
-\caption{IHM - Se connecter}
-\label{se_connecter}
+\caption{\glspl{ihm}* - Se connecter}
+\label{se_connecter_gui}
 \end{figure}
 
 Afin de se connecter il faut renseigner les différents champs présents dans la fen\^etre.
 
 \begin{enumerate}
-\item choix du SGBD* (Oracle, MySQL).
+\item choix du \glspl{sgbd}* (Oracle, MySQL).
 \item Adresse IP du serveur ou est stockée votre base de données.
 \item Nom d'utilisateur utilisé pour vous connecter à votre base de données. 
 \item Mot de passe utilisé pour vous connecter à votre base de données.
@@ -44,13 +44,13 @@ Connexion aux serveurs de l'IUT si vous \^etes étudiant :\\
 \end{itemize}
 
 \section{Créer une table}
-Dans le menu principal de l'application, cliquez sur le bouton \textbf{LDD : créer tables} pour ouvrir la fen\^etre de création de tables.
+Dans le menu principal de l'application, cliquer sur le bouton \textbf{\glspl{ldd} : créer tables} pour ouvrir la fen\^etre de création de tables (figure \ref{creer_table_gui}).
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=14cm]{./images/manuel/creer_table.jpg}
 \caption{IHM - Créer table}
-\label{creer_table}
+\label{creer_table_gui}
 \end{figure}
 
 \begin{enumerate}
@@ -85,17 +85,17 @@ Vous pouvez ensuite valider ou annuler votre modification.
 
 
 \section{Modifier une table}
-Dans le menu principal de l'application, clique sur le bouton \textbf{LDD : modifier tables} pour ouvrir la fenêtre de modification de tables.
+Dans le menu principal de l'application, cliquer sur le bouton \textbf{LDD : modifier tables} pour ouvrir la fenêtre de modification de tables (figure \ref{modifier_table_gui}).
 
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=10cm]{./images/manuel/modifier_tables.jpg}
 \caption{IHM - Modifier une table}
-\label{modifier_table}
+\label{modifier_table_gui}
 \end{figure}
 
-Cette fenêtre est identique à la fenêtre de Création d'une table, à la différence qu'il est possible de sélectionner une table déjà existante dans la \bdd. 
+Cette fenêtre est identique à la fenêtre de création d'une table, à la différence qu'il est possible de sélectionner une table déjà existante dans la \bdd. 
 
 Il est possible de modifier une table existante avec le bouton \textbf{modifier}, sans perdre de données mais il est possible que certaines soient perdus lors de la modification :
 \begin{itemize}
@@ -108,13 +108,13 @@ Il est possible de modifier une table existante avec le bouton \textbf{modifier}
 
 
 \section{Supprimer une table}
-Dans le menu principal de l'application, cliquer sur le bouton \textbf{LDD : supprimer tables} pour ouvrir la fen\^etre de suppression de tables.
+Dans le menu principal de l'application, cliquer sur le bouton \textbf{LDD : supprimer tables} pour ouvrir la fen\^etre de suppression de tables (figure \ref{supprimer_table_gui}).
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=8cm]{./images/manuel/supprimer_table.jpg}
 \caption{IHM - Supprimer une table}
-\label{supprimer_table}
+\label{supprimer_table_gui}
 \end{figure}
 
 \begin{enumerate}
@@ -125,25 +125,25 @@ Dans le menu principal de l'application, cliquer sur le bouton \textbf{LDD : sup
 \end{enumerate}
 
 \section{Requ\^etes SQL}
-Dans le menu principal de l'application, cliquer sur le bouton \textbf{SQL} pour ouvrir la fen\^etre du mode requ\^etes SQL.
+Dans le menu principal de l'application, cliquer sur le bouton \textbf{\glspl{sql}}* pour ouvrir la fen\^etre du mode requ\^etes SQL (figure \ref{sql_gui}).
 \begin{figure}[!h]
 \centering
 \includegraphics[width=6cm]{./images/manuel/sql.jpg}
 \caption{IHM - SQL}
-\label{sql}
+\label{sql_gui}
 \end{figure}
 
 \begin{enumerate}
 \item Ecrire la requ\^ete dans la zone de saisie - \textit{ex : SELECT * FROM Etudiants;} 
 \item Cliquer sur le bouton \textbf{Envoyer} pour tenter d'exécuter la requ\^ete.
-Une fenêtre s'ouvre indiquant le résultat de la requ\^ete si la syntaxe est correcte.
+Une fenêtre (figure \ref{sql_result_gui}) s'ouvre indiquant le résultat de la requ\^ete si la syntaxe est correcte.
 \end{enumerate}
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=8cm]{./images/manuel/sql_result.jpg}
 \caption{IHM - Résultat SQL}
-\label{sql_result}
+\label{sql_result_gui}
 \end{figure}
 
 \begin{enumerate}
@@ -151,13 +151,13 @@ Une fenêtre s'ouvre indiquant le résultat de la requ\^ete si la syntaxe est co
 \item Cliquer sur le bouton \textbf{OK} pour fermer la fen\^tre de résultat.
 \end{enumerate}
 
-\section{CRUD* les tuples des tables}
-Dans le menu principal de l'application, cliquer sur le bouton \textbf{CRUD} pour ouvrir la fen\^etre de gestion des tuples des tables.
+\section{CRUD les tuples des tables}
+Dans le menu principal de l'application, cliquer sur le bouton \textbf{\glspl{crud}}* pour ouvrir la fen\^etre de gestion des \glspl{tuple}* des tables (figure \ref{crud_gui}).
 \begin{figure}[!h]
 \centering
 \includegraphics[width=12cm]{./images/manuel/crud.jpg}
 \caption{IHM - CRUD}
-\label{crud}
+\label{crud_gui}
 \end{figure}
 
 \begin{enumerate}

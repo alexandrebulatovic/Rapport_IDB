@@ -8,7 +8,7 @@ Le langage de définition des données permet de structurer une base de données
 Il ne s'intêresse pas aux données contenues dans les tables
 \footnote{\label{interet_ldd}Le LDD prend en compte les données contenues dans les tables et peut agir dessus, mais c'est une conséquence, pas son rôle.}, mais aux tables elles même. Le LDD est séparé en trois instructions:
 
-\subsubsection{CREATE TABLE}
+\subsubsection{Create table}
 Permet de créer une \gls{table}. Dans un SGBD, les tables sont nommées, chaque nom est unique.
 Une table est créée avec au moins un attribut dont il faut préciser le type de données (texte, nombre, date etc.) et la taille.
 Des \glspl{constraint} supplémentaires peuvent être ajoutées : les \textit{\glspl{primarykey}} \footnote{\label{contrainte_clée_primaire}Voir glossaire.}, les attributs \textit{not null} et groupes d'attributs \textit{uniques}.
@@ -25,8 +25,7 @@ La \gls{query} suivante montre la création d'une table nommée PERSONNES, qui c
     );
   \end{lstlisting}
 
-
-\subsubsection{ALTER TABLE}
+\subsubsection{Alter table}
 Permet de revenir sur ce qui a été fait avec CREATE TABLE.
 L'instruction permet d'ajouter, supprimer ou modifier des \glspl{attribut}, des contraintes, des index...
 
@@ -42,7 +41,7 @@ La requête SQL suivante modifie la table \textit{PERSONNES} pour y ajouter une 
   );
 \end{lstlisting}
 
-\subsubsection{DROP TABLE}
+\subsubsection{Drop table}
 Permet de supprimer une table et les données qu'elle contient.
 Dans une base de données relationnelles, les tables sont liées entre elles par des attributs.
 La supression d'une table peut entraîner la supression de données dans d'autres tables, en fonction du schéma relationnel de la base.

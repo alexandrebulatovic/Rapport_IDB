@@ -2,7 +2,14 @@
 
 
 \subsection{Cycle Itératif}
+La méthode de développement pour le projet tuteuré est plus ou moins imposée. En effet pour pouvoir suivre l'avancement du projet, les tuteurs demandent aux étudiants d'utiliser un cycle itératif (figure \ref{cycle_iteratif}).
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=8cm]{images/activite/cycle_iteratif.png}
+\caption{Schéma cycle Itératif}
+\label{cycle_iteratif}
+\end{figure}
 
 \subsection{Outils de developpement}
 Le choix du langage à utiliser était libre, nous avons donc opté pour un langage simple d'utilisation et ayant déjà fait ses preuves : \textbf{Java} (figure \ref{java_logo}).
@@ -26,6 +33,97 @@ Nous avons choisi de travailler avec le logiciel \textbf{Éclipse} (figure \ref{
 \textbf{Éclipse} est agréable à utiliser, il est libre de droits et fait partit des IDE les plus puissants de nos jours.
 La bibliothèque nous permettant de faire des \gls{ihm} utilisé est swing, une bibliothèque native de Java, constamment mise à jours et très utilisé (donc très documenté).
 
+\section{Planification}
+Le projet a été découpé en sept itérations de durée variante (d'une semaine à un mois) en fonction des périodes d'examens et de vacances. Au cours de chaque itérations, de nombreux refactoring de code ainsi que d'organisation du code ont eu lieu.
+
+
+\subsection{Itération 1 - 14/11/2016}
+
+\textbf{Fonctionnalités et travail réalisé}
+\begin{itemize}
+\item Connexion à une base de données Oracle.
+\item Mode requêtes SQL.\\
+\end{itemize}
+
+\textbf{Résultat :}\\
+L'utilisateur peut connecter à une base de données mais il y a des problèmes dans les champs de saisies. Le mode requête SQL ne fonctionne pas parfaitement.
+Cette itération n'avais pas de grosse valeur pour le client. Elle a surtout permis de poser les bases de notre travail en groupe sur le projet en commençant à utiliser et se familiariser avec les outils de collaboration.
+
+
+\subsection{Itération 2 - 02/12/2016}
+\textbf{Fonctionnalités et travail réalisé}
+\begin{itemize}
+\item Correction des bugs sur la fenêtre de connexion et sur le mode Requêtes SQL.
+\item Création de tables.\\
+\end{itemize}
+
+\textbf{Résultat :}\\
+Les bugs signalés sont corrigés et la vue de création de table fonctionne avec quelques bugs mineurs.
+Cette itération fut satisfaisante pour le groupe car les attentes ont été respectées.
+
+\subsection{Itération 3 - 15/12/2016}
+\textbf{Fonctionnalités et travail réalisé}
+\begin{itemize}
+\item Connexion à MySQL.
+\item Correction des bugs sur la fenêtre de création de tables.
+\item Suppression de tables.
+\item Modification de tables.\\
+\end{itemize}
+
+\textbf{Résultat :}\\
+Les bugs signalés sont corrigés et la vue de suppression de table fonctionne.
+La modification de table ne fonctionne pas totalement.
+Cette itération fut mitigée car la valeur apportée au client n'était pas conséquente. 
+
+
+\subsection{Itération 4 - 12/01/2017}
+\textbf{Fonctionnalités et travail réalisé}
+\begin{itemize}
+\item Correction de bugs sur la fenêtre de modification des tables.
+\item CRUD des tuples d'une table.\\
+\end{itemize}
+
+\textbf{Résultat :}\\
+La fenêtre CRUD fonctionne partiellement (fonctionnalité update pas implantée) et quelques bugs sur l'insertion. 
+La modification de table ne fonctionne pas totalement.
+Cette itération fut peu satisfaisante mais a permis une remise en question de notre organisation. 
+
+\subsection{Itération 5 - 02/02/2017}
+\textbf{Fonctionnalités et travail réalisé}
+\begin{itemize}
+\item Correction des bugs sur le CRUD et ajout de la fonctionnalité update.
+\item Début de la refonte des classes métiers de l'application.\\
+\end{itemize}
+
+\textbf{Résultat :}\\
+La fenêtre CRUD fonctionne avec quelques bugs mineurs.
+La refonte des classes métiers avait pour but de stocker les différentes informations des tables de notre base de données et ainsi facilité l'accès à celles-ci.
+La modification de table ne marche plus, mais la refonte des classes métiers va permettre de la faire fonctionner.
+Cette itération fut satisfaisante car la refonte des classes métiers nous simplifie beaucoup de choses. 
+
+\subsection{Itération 6 - 09/02/2017}
+\textbf{Fonctionnalités et travail réalisé}
+\begin{itemize}
+\item Correction des bugs sur la fenêtre CRUD.
+\item Fin de la refonte des classes métiers de l'application.
+\item Modification des vues de Creation-Supression-Modification de tables pour qu'elles collent aux classes métiers.
+\item Création et supression de contraintes (uniques et clées étrangères).\\
+\end{itemize}
+
+\textbf{Résultat :}\\
+La fenêtre CRUD fonctionne avec quelques bugs mineurs.
+La création et la suppression de tables fonctionnent avec les nouvelles classes métiers.
+La création et la suppression de contraintes ne fonctionne pas totalement.
+Cette itération était dans la continuité de l'itération 6. 
+
+\subsection{Itération 7 - 20/02/2017}
+\textbf{Fonctionnalités et travail réalisé}
+\begin{itemize}
+\item Fonctionnalité 1
+\item Fonctionnalité 2 \\
+\end{itemize}
+
+\textbf{Résultat :}\\
 
 
 \section{Outils de collaboration}
@@ -49,8 +147,8 @@ Etant majoritairement habitué à utiliser Git, c'est vers un dép\^ot \textbf{G
 
 
 
-\subsection{Répartition des t\^aches}
-Au cours de leurs formations antérieures, certain membres du projet ont eu l'habitude d'utiliser l'outil de gestion de projet \textbf{Trello} (figure \ref{trello_logo}). C'est pourquoi nous avons utiliser cet outil pour répartir les t\^aches.\\
+\subsection{Répartition des tâches}
+Au cours de leurs formations antérieures, certain membres du projet ont eu l'habitude d'utiliser l'outil de gestion de projet \textbf{Trello} (figure \ref{trello_logo}). C'est pourquoi nous avons utiliser cet outil pour répartir les tâches.\\
 
 \begin{figure}[H]
 \centering
@@ -106,4 +204,3 @@ Tout au long du projet, nous avons produits différents documents qu'il nous a f
 
 
 
-\section{Planification}

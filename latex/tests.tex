@@ -1,0 +1,33 @@
+Les tests constituent des éléments indispensables permettant la progression dans un projet en toute sécurité.
+\section{Pourquoi Tester}
+
+Idéalement, chaque classe (donc chaque fichier en Java), devrait être testé \textbf{individuellement}. C'est-à-dire qu'il faut créer des classes \Glspl{mock} pour isoler chaque classe testé.
+Les classes natives de Java ne seront pas "Mocké" car elles sont considéré "parfaites".
+
+Il est utile de tester pour vérifier la validations de point de fonctionnalités définies sur un cahier des charges.
+\exemple{L'utilisateur doit pouvoir se connecter à la base de données, si un jour, après une légère modification, l'utilisateur ne peut plus de connecter, le reste du logiciel deviendra inutile aux yeux du client\newline}
+
+Bien entendu, il n'est pas forcément utile de tester toutes les classes, mais seulement les plus importantes et pertinentes.
+
+\section{Les Tests Choisis}
+
+Nous avons donc choisi de tester en priorité les classes \textbf{Métiers} : Une classe de Test noté \textbf{AllTests.class} se charge alors de lancer tous les tests liés aux classes métiers : 
+\begin{itemize}
+	\item testAttribute
+	\item testTable
+	\item testConstraint
+	\item testTableSet
+\end{itemize}
+
+\textit{Voir section \ref{section_metiers} traitant des classes métiers}
+
+
+Nous avons mélangé les tests en \textbf{Pro Ingénierie} et les tests en \textbf{Rétro Ingénierie}. 
+Lorsque les classes externes ont eu besoin des classes métiers, certaines fonctionnalités ont alors été ajouté en \gls{tdd}.
+
+Pour finir, les tests se sont portés sur la connexion, l'élément le plus important dans notre projet, 
+car elle est utilisé indirectement par toutes les autres classes (aucun test d'intégration ne passerait 
+si les tests unitaires de la connection ne passaient pas).
+
+Pour cela, un \Gls{mock} à été créé afin de se passer du DDLContrôleur.
+

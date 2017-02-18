@@ -1,32 +1,41 @@
 Cette section détaille les couches évoquées dans l'autre section \ref{partie_architecture} et complète sur les paquetages \textit{factory} (visible sur la figure \ref{diagramme_de_paquetage_idb}) et \textit{useful}.
 
 \subsection{Paquetage des fabriques}
+L'application utilise une \textit{fabrique abstraite} qui se trouve dans le paquetage \textit{factory}.
+
 \subsubsection{Utilité}
-L'une des problématiques de ce projet est de faire fonctionner l'application par dessus tous les SGBD disponibles.
+L'une des problématiques est de faire fonctionner l'application par dessus tous les SGBD disponibles.
 Bien que le langage SQL soit normé, les SGBD ne l'implémentent pas de la même manière, ce qui veut dire que la syntaxe des requêtes est \underline{différente} d'un SGBD à l'autre.
-Ce point constitue la difficulté principale de l'application.
-Il y en a d'autres mais elles sont mineures, comme la gestion de la casse
+Ce point constitue la difficulté principale du développement, et la fabrique abstraite permet de la régler tout en respectant les principes \textit{ouvert/fermé}. Elle permet également de régler d'autres problèmes mineurs, comme la gestion de la casse qui diffère d'un SGBD à l'autre
 \footnote{\label{casse_et_sgbd}Oracle convertit le nom des tables et contraintes en majuscule, ce qui n'est pas le cas de MySQL par exemple.}.
 
 En raison du temps disponible pour le développement, l'application ne fonctionne qu'avec les SGBD Oracle et MySQL.
-En revanche, elle est conçue pour s'adapter à un nouvel SGBD sans modifier le code existant (ou presque) : il "suffit" d'en ajouter pour utiliser un nouvel SGBD.
-
-Pour cela, l'application utilise une \textit{fabrique abstraite}, qui sur la figure \ref{diagramme_de_paquetage_idb}, se trouve dans le paquetage \textit{factory}.
+En revanche, elle accueille un nouvel SGBD sans \textbf{modifier} le code existant: il faut en \textbf{ajouter}.
 
 \subsubsection{Dépendances supplémentaires}
-Les dépendances de ce paquetage ne sont pas toutes représentées sur la figure.
-Ce qui est visible dans le diagramme c'est que la fabrique est toujours appelée depuis un contrôleur (lui-même passant par les façades).
-En plus de cela, la fabrique possède des dépendances de stéréotypes \textit{create} vers les paquetages :
+Les dépendances de ce paquetage ne sont pas toutes représentées sur la figure \ref{diagramme_de_paquetage_idb}.
+Le diagramme montre que la fabrique est toujours appelée depuis un contrôleur (par le biais d'une façade).
+En plus de cette dépendance, des dépendances de stéréotypes \textit{create} existent :
 \begin{itemize}
-\item \textbf{gui} : \underline{pas} pour fabriquer des IHM, mais des classes imposées par Java pour les faire fonctionner, avec un comportement différent selon le SGBD connecté.
-\item \textbf{manager} : pour créer des DAO générant le code SQL adapté au SGBD connecté.
+\item vers le paquetage gui, pour que les IHM utilisent une stratégie de saisie différente en fonction du SGBD (gestion de la casse par exemple),
+\item vers le paquetage manager, pour que le code SQL généré ait la syntaxe du SGBD connecté.
 \end{itemize}
 
 \subsubsection{Statique de la fabrique}
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=14cm]{images/diagramme_classes_fabriques.eps}
+  \caption{Fabrique abstraite de l'application. Génère des objets différents selon le SGBD connecté.}
+  \label{diagramme_classes_fabrique}
+\end{figure}
 
+Sur la figure \ref{diagramme_classes_fabrique}, la classe \textit{MainFactory} est une fabrique concrète de fabriques abstraites.
+Elle s'associe avec une \textit{I\_DBMSFactory} qui représente le SGBD connecté pour créer les bons objets, ce qui correspond à un pattern \textit{stratégie}.
+
+La seule fabrique de l'application est MainFactory.
 
 \subsection{Paquetage des outils}
-Plusieurs classes de cette application sont utilisées un peu partout dans le code.
+Plusieurs classes sont utilisées un peu partout dans le code.
 Ces classes (développées par l'équipe du projet) sont regroupées dans le paquetage \textit{useful}, qui n'apparaît pas sur la figure \ref{diagramme_de_paquetage_idb}.
 
 Tous les paquetages de cette application dépendent du paquetage useful, mais ce n'est pas génant dans la mesure où le code de ces classes n'est jamais amené à changer.

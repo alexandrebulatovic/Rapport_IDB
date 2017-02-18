@@ -1,3 +1,4 @@
+\label{partie_architecture}
 L'application est conçue selon le \textit{modèle en couche}, bien qu'elles ne soient pas strictes.
 Elle n'utilise \underline{pas} le pattern MVC
 \footnote{\label{MVC_pas_utile}Pattern pour les applications disposant de vue.
@@ -49,7 +50,7 @@ Sur la figure \ref{diagramme_de_paquetage_idb}, la couche facade se trouve dans 
 La couche \gls{dao} permet d'enregistrer et récupérer des informations depuis le SGBD.
 En temps normal, les DAO permettent d'enregistrer des données.
 Dans cette application, ils permettent d'enregistrer les données, leurs conteneurs (tables) et les \glspl{constraint}.
-Ils ont également un rôle de générateur de SQL, généralement "simple" ou qui diffère selon le SGBD connecté, contrairement aux classes métiers qui fournissent du SQL qui fonctionne sur tous les SGBD.
+Ils ont également un rôle de générateur de SQL, généralement "simple" et qui diffère selon le SGBD connecté, contrairement aux classes métiers qui fournissent du SQL qui fonctionne sur tous les SGBD.
 
 Sur la figure \ref{diagramme_de_paquetage_idb}, la couche DAO se trouve dans le paquetage \textit{manager}.
 Les DAO sont utilisés \textit{à peu près} en suivant le design pattern \textit{data mapper}
@@ -58,15 +59,21 @@ Les DAO sont utilisés \textit{à peu près} en suivant le design pattern \texti
 
 \subsection{Couche fabriques}
 L'une des problématique de ce projet est de faire fonctionner l'application par dessus tous les SGBD disponibles.
-En pratique, cela prendrait beaucoup trop de temps.
-En revanche, l'application est conçue pour s'adapter à un nouvel SGBD sans modifier de code existant (ou presque), il "suffit" d'en ajouter pour utiliser un nouvel SGBD.
+Bien que le langage SQL soit normé, les SGBD ne l'implémentent pas de la même manière, ce qui veut dire qu'il est \underline{différent} d'un SGBD à l'autre. C'est la difficulté principale pour que l'application fonctionne sur tous les SGBD. Il y a d'autres difficultés mais elles sont mineures, comme la gestion de la casse
+\footnote{\label{casse_et_sgbd}Oracle convertit le nom des tables et contraintes en majuscule, ce qui n'est pas le cas de MySQL par exemple.}.
+
+Cela prend beaucoup trop de temps de faire un code qui fonctionne pour tous les SGBD.
+Ce n'est pas ce que l'application propose.
+Elle ne fonctionne qu'avec les SGBD Oracle et MySQL.
+En revanche, elle est conçue pour s'adapter à un nouvel SGBD sans modifier le code existant (ou presque), il "suffit" d'en ajouter pour utiliser un nouvel SGBD.
+
 Pour cela, l'application utilise une \textit{fabrique abstraite}.
 
 Sur la figure \ref{diagramme_de_paquetage_idb}, la fabrique se trouve dans le paquetage \textit{factory}.
 Les dépendances de ce paquetage ne sont pas toutes représentées sur la figure.
-De ce qu'il faut comprendre, c'est qu'elle est toujours appelée depuis un contrôleur (lui-même passant par les façades).
-En plus de cela, la fabrique possède des dépendances de stéréotypes \textit{create} vers les autres paquetages :
+Ce qui est visible dans le diagramme c'est que la fabrique est toujours appelée depuis un contrôleur (lui-même passant par les façades).
+En plus de cela, la fabrique possède des dépendances de stéréotypes \textit{create} vers les paquetages :
 \begin{itemize}
-\item \textit{gui} : \underline{pas} pour fabriquer des IHM, mais des classes imposées par Java pour les faire fonctionner, avec un comportement différent selon le SGBD connecté.
-\item \textit{manager} : pour créer des DAO générant le code SQL adapté au SGBD connecté.
+\item \textbf{gui} : \underline{pas} pour fabriquer des IHM, mais des classes imposées par Java pour les faire fonctionner, avec un comportement différent selon le SGBD connecté.
+\item \textbf{manager} : pour créer des DAO générant le code SQL adapté au SGBD connecté.
 \end{itemize}

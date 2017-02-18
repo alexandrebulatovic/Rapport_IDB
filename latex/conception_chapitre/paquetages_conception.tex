@@ -33,6 +33,8 @@ Sur la figure \ref{diagramme_classes_fabrique}, la classe \textit{MainFactory} e
 Elle s'associe avec une \textit{I\_DBMSFactory} qui représente le SGBD connecté pour créer les bons objets, ce qui correspond à un pattern \textit{stratégie}.
 
 La seule fabrique de l'application est MainFactory.
+Pour ajouter un nouvel SGBD, il faut créer une classe qui implémente l'interface I\_DBMSFactory, donc \textbf{ajouter} du code.
+La seule \textbf{modification} nécessaire se trouve dans MainFactory, pour qu'elle puisse instancier l'implémentation.
 
 \subsection{Paquetage des outils}
 Plusieurs classes sont utilisées un peu partout dans le code.

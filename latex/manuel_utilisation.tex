@@ -5,8 +5,8 @@ L'application se lance sur un double-clic sur l'exécutable.
 La première fen\^etre permet de se connecter au SGBD (figure \ref{se_connecter_gui}).
 \begin{figure}[!h]
 \centering
-\includegraphics[width=10cm]{./images/manuel/se_connecter.jpg}
-\caption{\glspl{ihm}* - Se connecter}
+\includegraphics[width=10cm]{./images/manuel/se_connecter.eps}
+\caption{\gls{ihm}* - Se connecter}
 \label{se_connecter_gui}
 \end{figure}
 
@@ -46,11 +46,11 @@ Si vous êtes un étudiant de l'IUT de Montpellier.
 \end{itemize}
 
 \section{Créer une table}
-Dans le menu principal de l'application, cliquer sur le bouton \textbf{\glspl{ldd} : créer tables} pour ouvrir la fen\^etre de création de tables (figure \ref{creer_table_gui}).
+Dans le menu principal de l'application, cliquer sur le bouton \textbf{\gls{ldd} : créer tables} pour ouvrir la fen\^etre de création de tables (figure \ref{creer_table_gui}).
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=14cm]{./images/manuel/creer_table.jpg}
+\includegraphics[width=14cm]{./images/manuel/creer_table.eps}
 \caption{IHM - Créer table}
 \label{creer_table_gui}
 \end{figure}
@@ -89,7 +89,7 @@ Dans le menu principal de l'application, cliquer sur le bouton \textbf{LDD : mod
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=10cm]{./images/manuel/modifier_tables.jpg}
+\includegraphics[width=10cm]{./images/manuel/modifier_tables.eps}
 \caption{IHM - Modifier une table}
 \label{modifier_table_gui}
 \end{figure}
@@ -111,7 +111,7 @@ Dans le menu principal de l'application, cliquer sur le bouton \textbf{LDD : sup
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=8cm]{./images/manuel/supprimer_table.jpg}
+\includegraphics[width=8cm]{./images/manuel/supprimer_table.eps}
 \caption{IHM - Supprimer une table}
 \label{supprimer_table_gui}
 \end{figure}
@@ -124,10 +124,10 @@ Dans le menu principal de l'application, cliquer sur le bouton \textbf{LDD : sup
 \end{enumerate}
 
 \section{Requ\^etes SQL}
-Dans le menu principal de l'application, cliquer sur le bouton \textbf{\glspl{sql}}* pour ouvrir la fen\^etre du mode requ\^etes SQL (figure \ref{sql_gui}).
+Dans le menu principal de l'application, cliquer sur le bouton \textbf{\gls{sql}}* pour ouvrir la fen\^etre du mode requ\^etes SQL (figure \ref{sql_gui}).
 \begin{figure}[!h]
 \centering
-\includegraphics[width=6cm]{./images/manuel/sql.jpg}
+\includegraphics[width=6cm]{./images/manuel/sql.eps}
 \caption{IHM - SQL}
 \label{sql_gui}
 \end{figure}
@@ -140,7 +140,7 @@ Une fenêtre (figure \ref{sql_result_gui}) s'ouvre indiquant le résultat de la 
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=8cm]{./images/manuel/sql_result.jpg}
+\includegraphics[width=8cm]{./images/manuel/sql_result.eps}
 \caption{IHM - Résultat SQL}
 \label{sql_result_gui}
 \end{figure}
@@ -154,7 +154,7 @@ Une fenêtre (figure \ref{sql_result_gui}) s'ouvre indiquant le résultat de la 
 Dans le menu principal de l'application, cliquer sur le bouton \textbf{\gls{crud}}* pour ouvrir la fen\^etre de gestion des \glspl{tuple}* des tables (figure \ref{crud_gui}).
 \begin{figure}[!h]
 \centering
-\includegraphics[width=12cm]{./images/manuel/crud.jpg}
+\includegraphics[width=12cm]{./images/manuel/crud.eps}
 \caption{IHM - CRUD}
 \label{crud_gui}
 \end{figure}
@@ -167,6 +167,88 @@ dans la ligne vide qui s'est ajouté au tableau.
 \item Cliquer sur le bouton \textbf{Mettre à jour} pour modifier un tuple de la table. Il faut ensuite modifer les informations du tableau et 
 appuyer sur la touche entrée à chaque modification. Quitter le mode modification en cliquant une nouvelle fois sur le bouton \textbf{Mettre à jour}.
 \item Cliquer sur le bouton \textbf{Supprimer} pour supprimer le tuple selectionné.
+\item Cliquer sur le bouton \textbf{Refresh} pour rafraichir la vue au cas où des tables ayant été supprimées sont affichées.
 \end{enumerate}
 
 \section{Ajouter et Supprimer des contraintes}
+
+Dans le menu principal de l'application, cliquer sur le bouton \textbf{LDD : créer supprimer des contraintes} pour ouvrir la fen\^etre de création et supression de contraintes unique et clées étrangères(figure \ref{contraintes_unique_gui}).
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=12cm]{./images/manuel/contraintes_unique.eps}
+\caption{IHM - Contraintes unique}
+\label{contraintes_unique_gui}
+\end{figure}
+
+Pour créer une contrainte \textbf{unique} :
+\begin{enumerate}
+\item Choisir le type de contrainte à ajouter à votre table.
+\item Choisir la table.
+\item Tableau contenant les attributs de la table. Pour ajouter la contrainte il faut sélectionner des attributs dans ce tableau. La selection multiple de fait à l'aide la la touche CTRL.
+\item Cliquer sur le bouton \textbf{Ajouter la contrainte} pour ajouter la contrainte à la table.
+\item Tableau contenant les contraintes de la table source.
+\item Cliquer sur le bouton \textbf{Supprimer la contrainte} pour supprimer la contrainte de la table et du tableau.
+\end{enumerate}
+
+Pour créer une contrainte \textbf{clée étrangère} ( FOREIGN KEY ) :\\
+Même déroulement que pour une contrainte unique sauf pour les points 2 et 3 (figure\ref{contraintes_fk_gui}).
+
+\begin{enumerate}
+\item Choisir les tables source et destination pour la clée etrangère.
+\item Tableaux contenant les attributs de la table source et de la table destination. Pour ajouter la contrainte il faut sélectionner des attributs dans ces tableaux. La selection multiple de fait à l'aide la la touche CTRL. Le nombre d'attributs sélectionnés dans la table source doit être le même que dans la table destination.
+\end{enumerate}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=12cm]{./images/manuel/contraintes_fk.eps}
+\caption{IHM - Contraintes foreign key}
+\label{contraintes_fk_gui}
+\end{figure}
+
+
+\section{Faire des requêtes graphiques : QBE*}
+
+Dans le menu principal de l'application, cliquer sur le bouton \textbf{QBE : Requêtes} pour ouvrir la fenêtre de requêtes graphique(figure \ref{qbe_gui}).
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=12cm]{./images/manuel/qbe.eps}
+\caption{IHM - Requêtes graphique (QBE)}
+\label{qbe_gui}
+\end{figure}
+
+\begin{enumerate}
+\item Ajouter un attribut à la requête :
+\begin{enumerate}
+\item Choisir la table.
+\item Choisir l'attribut ou * pour selectionner tout les attributs.
+\item Cliquer sur le bouton \textbf{Ajouter l'attribut} pour ajouter l'attribut à la requête.
+\end{enumerate}
+\item Modifier les caractéristiques de la requête :
+\begin{enumerate}
+\item A cocher pour qu'il n'y ai pas de doublon dans le résultat de la requête.
+\item Tableau contenant les attributs utilisés dans la requête ainsi que les conditions de sélection pour la requête :
+\begin{itemize}
+\item Table : nom de la table cible.
+\item Attribut : nom de l'attribut cible. ( * pour sélectionner toute la table ).
+\item Sélectionné : à cocher pour que l'attribut soit visible dans le résultat de la requête.
+\item WHERE : condition de séléction sur un attribut. 
+Plusieur conditions sur une même ligne correspondent à l'opérateur logique AND. \\
+\textit{Ex (figure \ref{qbe_gui}) : nom = 'Maury' \textbf{AND} age>20}.\\
+Plusieur conditions sur des lignes différentes correspondent à l'opérateur logique OR.\\
+ \textit{Ex : (nom = 'Maury' AND age>20) \textbf{OR} prenom = 'Romain'}.\\
+\end{itemize}
+\item Cliquer sur le bouton \textbf{Executer la requête} pour executer la requête.
+\item Cliquer sur le bouton \textbf{Reset} pour remettre à zéro la fenêtre.
+\end{enumerate}
+\end{enumerate}
+
+La fenêtre de résultat de la requête s'ouvre. Cliquer sur le bouton \textbf{OK} pour fermer la fenêtre (figure \ref{qbe_result_gui}).
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=12cm]{./images/manuel/qbe_result.eps}
+\caption{IHM - Requêtes graphique (QBE) - Resultat}
+\label{qbe_result_gui}
+\end{figure}

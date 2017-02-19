@@ -6,26 +6,30 @@ La méthode de développement pour le projet tuteuré est plus ou moins imposée
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=8cm]{images/activite/cycle_iteratif.png}
+\includegraphics[width=8cm]{images/activite/cycle_iteratif.eps}
 \caption{Schéma cycle Itératif}
 \label{cycle_iteratif}
 \end{figure}
 
 \subsection{Outils de developpement}
 Le choix du langage à utiliser était libre, nous avons donc opté pour un langage simple d'utilisation et ayant déjà fait ses preuves : \textbf{Java} (figure \ref{java_logo}).
+\\
+\\
+\\
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=8cm]{images/activite/javaLogo.png}
+\includegraphics[width=8cm]{images/activite/javaLogo.eps}
 \caption{Logo Java}
 \label{java_logo}
 \end{figure}
+
 
 Nous avons choisi de travailler avec le logiciel \textbf{Éclipse} (figure \ref{eclipse_logo}), l'\gls{IDE} par excellence pour développer du \textbf{Java}.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=8cm]{images/activite/eclipseLogo.png}
+\includegraphics[width=8cm]{images/activite/eclipseLogo.eps}
 \caption{Logo Éclipse}
 \label{eclipse_logo}
 \end{figure}
@@ -39,91 +43,91 @@ Le projet a été découpé en sept itérations de durée variante (d'une semain
 
 \subsection{Itération 1 - 14/11/2016}
 
-\textbf{Fonctionnalités et travail réalisé}
+\subsubsection{Fonctionnalités et travail réalisé}
 \begin{itemize}
 \item Connexion à une base de données Oracle.
-\item Mode requêtes SQL.\\
+\item Mode requêtes SQL.
 \end{itemize}
 
-\textbf{Résultat :}\\
+\subsubsection{Résultat}
 L'utilisateur peut connecter à une base de données mais il y a des problèmes dans les champs de saisies. Le mode requête SQL ne fonctionne pas parfaitement.
 Cette itération n'avais pas de grosse valeur pour le client. Elle a surtout permis de poser les bases de notre travail en groupe sur le projet en commençant à utiliser et se familiariser avec les outils de collaboration.
 
 
 \subsection{Itération 2 - 02/12/2016}
-\textbf{Fonctionnalités et travail réalisé}
+\subsubsection{Fonctionnalités et travail réalisé}
 \begin{itemize}
 \item Correction des bugs sur la fenêtre de connexion et sur le mode Requêtes SQL.
-\item Création de tables.\\
+\item Création de tables.
 \end{itemize}
 
-\textbf{Résultat :}\\
+\subsubsection{Résultat}
 Les bugs signalés sont corrigés et la vue de création de table fonctionne avec quelques bugs mineurs.
 Cette itération fut satisfaisante pour le groupe car les attentes ont été respectées.
 
 \subsection{Itération 3 - 15/12/2016}
-\textbf{Fonctionnalités et travail réalisé}
+\subsubsection{Fonctionnalités et travail réalisé}
 \begin{itemize}
 \item Connexion à MySQL.
 \item Correction des bugs sur la fenêtre de création de tables.
 \item Suppression de tables.
-\item Modification de tables.\\
+\item Modification de tables.
 \end{itemize}
 
-\textbf{Résultat :}\\
+\subsubsection{Résultat}
 Les bugs signalés sont corrigés et la vue de suppression de table fonctionne.
 La modification de table ne fonctionne pas totalement.
 Cette itération fut mitigée car la valeur apportée au client n'était pas conséquente. 
 
 
 \subsection{Itération 4 - 12/01/2017}
-\textbf{Fonctionnalités et travail réalisé}
+\subsubsection{Fonctionnalités et travail réalisé}
 \begin{itemize}
 \item Correction de bugs sur la fenêtre de modification des tables.
-\item CRUD des tuples d'une table.\\
+\item CRUD des tuples d'une table.
 \end{itemize}
 
-\textbf{Résultat :}\\
+\subsubsection{Résultat}
 La fenêtre CRUD fonctionne partiellement (fonctionnalité update pas implantée) et quelques bugs sur l'insertion. 
 La modification de table ne fonctionne pas totalement.
 Cette itération fut peu satisfaisante mais a permis une remise en question de notre organisation. 
 
 \subsection{Itération 5 - 02/02/2017}
-\textbf{Fonctionnalités et travail réalisé}
+\subsubsection{Fonctionnalités et travail réalisé}
 \begin{itemize}
 \item Correction des bugs sur le CRUD et ajout de la fonctionnalité update.
-\item Début de la refonte des classes métiers de l'application.\\
+\item Début de la refonte des classes métiers de l'application.
 \end{itemize}
 
-\textbf{Résultat :}\\
+\subsubsection{Résultat}
 La fenêtre CRUD fonctionne avec quelques bugs mineurs.
 La refonte des classes métiers avait pour but de stocker les différentes informations des tables de notre base de données et ainsi facilité l'accès à celles-ci.
 La modification de table ne marche plus, mais la refonte des classes métiers va permettre de la faire fonctionner.
 Cette itération fut satisfaisante car la refonte des classes métiers nous simplifie beaucoup de choses. 
 
 \subsection{Itération 6 - 09/02/2017}
-\textbf{Fonctionnalités et travail réalisé}
+\subsubsection{Fonctionnalités et travail réalisé}
 \begin{itemize}
 \item Correction des bugs sur la fenêtre CRUD.
 \item Fin de la refonte des classes métiers de l'application.
 \item Modification des vues de Creation-Supression-Modification de tables pour qu'elles collent aux classes métiers.
-\item Création et supression de contraintes (uniques et clées étrangères).\\
+\item Création et supression de contraintes (uniques et clées étrangères).
 \end{itemize}
 
-\textbf{Résultat :}\\
+\subsubsection{Résultat}
 La fenêtre CRUD fonctionne avec quelques bugs mineurs.
 La création et la suppression de tables fonctionnent avec les nouvelles classes métiers.
 La création et la suppression de contraintes ne fonctionne pas totalement.
 Cette itération était dans la continuité de l'itération 6. 
 
 \subsection{Itération 7 - 20/02/2017}
-\textbf{Fonctionnalités et travail réalisé}
+\subsubsection{Fonctionnalités et travail réalisé}
 \begin{itemize}
 \item Fonctionnalité 1
-\item Fonctionnalité 2 \\
+\item Fonctionnalité 2 
 \end{itemize}
 
-\textbf{Résultat :}\\
+\subsubsection{Résultat}
 
 
 \section{Outils de collaboration}
@@ -140,7 +144,7 @@ Etant majoritairement habitué à utiliser Git, c'est vers un dép\^ot \textbf{G
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=8cm]{images/activite/githubLogo.png}
+\includegraphics[width=8cm]{images/activite/githubLogo.eps}
 \caption{Logo GitHub}
 \label{github_logo}
 \end{figure}
@@ -152,7 +156,7 @@ Au cours de leurs formations antérieures, certain membres du projet ont eu l'ha
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=8cm]{images/activite/trelloLogo.png}
+\includegraphics[width=8cm]{images/activite/trelloLogo.eps}
 \caption{Logo Trello}
 \label{trello_logo}
 \end{figure}
@@ -176,7 +180,7 @@ Cependant nous souhaitions pouvoir discuter à l'oral ce que ne permet pas facil
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=10cm]{./images/activite/discordLogo.png}
+\includegraphics[width=10cm]{./images/activite/discordLogo.eps}
 \caption{Logo Discord}
 \label{discord_logo}
 \end{figure}
@@ -185,7 +189,7 @@ De plus, nous avons installé un BOT sur le Discord, lié a GitHub, qui écrit u
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=10cm]{./images/activite/bot_discord.jpg}
+\includegraphics[width=10cm]{./images/activite/bot_discord.eps}
 \caption{Message du BOT Discord lié à GitHub}
 \label{bot_discord}
 \end{figure}
@@ -197,7 +201,7 @@ Tout au long du projet, nous avons produits différents documents qu'il nous a f
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=10cm]{./images/activite/googleDriveLogo.jpg}
+\includegraphics[width=10cm]{./images/activite/googleDriveLogo.eps}
 \caption{Logo Google Drive}
 \label{googledrive_logo}
 \end{figure}

@@ -1,11 +1,11 @@
-L'application propose des fonctionnalités des SGBD vues durant le cursus à l'IUT.
+L'application propose certaines fonctionnalités des SGBD vues durant le cursus à l'IUT.
 Un exemple de requête SQL est indiqué pour chaque fonctionnalité.
-L'utilisateur n'a pas à écrire ces codes pour gérer sa base de données.
+L'utilisateur \underline{n'a pas} à écrire ces requêtes pour gérer sa base de données.
 
 \subsection{Le Langage de Définition des Données (LDD)}
 Le langage de définition des données permet de structurer une base de données.
-Il ne s'intêresse pas aux données contenues dans les tables
-\footnote{\label{interet_ldd}Le LDD prend en compte les données contenues dans les tables et peut agir dessus, mais c'est une conséquence, pas son rôle.}, mais aux tables elles même. Le LDD est séparé en trois instructions:
+Il ne s'intéresse pas aux données contenues dans les tables
+\footnote{\label{interet_ldd}Le LDD prend en compte les données contenues dans les tables et peut agir dessus, mais c'est une conséquence, pas son rôle.}, mais à la structure des tables. Le LDD est séparé en trois instructions:
 
 \subsubsection{Create table}
 Permet de créer une \gls{table}. Dans un SGBD, les tables sont nommées, chaque nom est unique.
@@ -25,10 +25,11 @@ La \gls{query} suivante montre la création d'une table nommée PERSONNES, qui c
   \end{lstlisting}
 
 \subsubsection{Alter table}
-Permet de revenir sur ce qui a été fait avec CREATE TABLE.
-L'instruction permet d'ajouter, supprimer ou modifier des \glspl{attribut}, des contraintes, des index...
+Permet de revenir sur l'instruction CREATE TABLE.
 
-Cette instruction se comporte différemment selon qu'une table soit vide ou remplie de lignes de données (\glspl{tuple}).
+ALTER TABLE permet d'ajouter, supprimer ou modifier des \glspl{attribut}, des contraintes, des index, etc. appartenant à la table donnée en argument.
+
+Cette instruction se comporte différemment selon qu'une table soit vide ou remplie de lignes de données (dits "\glspl{tuple}").
 Par exemple, ajouter une contrainte NOT NULL sur une colonne possédant déjà des tuples nuls n'est pas possible. Ce problème n'existe pas sur une table vide.
 
 La requête SQL suivante modifie la table \textit{PERSONNES} pour y ajouter une contrainte de clée primaire nommée \textit{pk\_personnes} sur l'attribut \textit{idpersonne}.
@@ -41,9 +42,9 @@ La requête SQL suivante modifie la table \textit{PERSONNES} pour y ajouter une 
 \end{lstlisting}
 
 \subsubsection{Drop table}
-Permet de supprimer une table et les données qu'elle contient.
+Cette instruction permet de supprimer une table et les données qu'elle contient.
 Dans une base de données relationnelles, les tables sont liées entre elles par des attributs.
-La supression d'une table peut entraîner la supression de données dans d'autres tables, en fonction du schéma relationnel de la base.
+La supression d'une table peut entraîner la supression de données d'autres tables, selon le schéma relationnel de la base.
 
 La requête SQL suivante supprime la table \textit{PERSONNES} de la base de données.
 \begin{lstlisting}
@@ -52,11 +53,11 @@ La requête SQL suivante supprime la table \textit{PERSONNES} de la base de donn
 
 \subsection{Le Langage de Manipulation des Données (LMD)}
 Le langage de manipulation des données permet d'affectuer des actions de \gls{crud} sur ce que contiennent les tables.
-En d'autres termes, il agit sur les tuples.
+En d'autres termes, il agit sur les tuples*.
 
 \subsubsection{Create}
-Il d'agit de créer un nouveau tuple dans une table.
-La requête SQL suivante permet d'ajouter un tuple de clée primaire \textit{00001} dans la table \textit{PERSONNES}.
+Il s'agit de créer un nouveau tuple dans une table.
+La requête SQL suivante permet d'ajouter un tuple ayant pour clée primaire \textit{00001} dans la table \textit{PERSONNES}.
 \begin{lstlisting}
   INSERT INTO PERSONNES
   (idpersonne, nompersonne, taillepersonne,
@@ -66,7 +67,7 @@ La requête SQL suivante permet d'ajouter un tuple de clée primaire \textit{000
 \end{lstlisting}
 
 \subsubsection{Read}
-Il s'agit de récupérer, lire, croiser des données que contiennent les tables.
+Il s'agit de récupérer et croiser les données que contiennent les tables.
 Les requêtes SQL  "read" peuvent être très complexes.
 Certains SGBD proposent des \glspl{qbe}
 \footnote{Access, LOBase, phpMyAdmin...}pour créer ces requêtes sans manipuler de SQL.
@@ -79,7 +80,7 @@ Celle qui est écrite juste après est simple et permet de retrouver le nom de l
 
 \subsubsection{Update}
 Il s'agit de modifier un ou plusieurs tuples qui existent déjà dans la table.
-La requête SQL suivante remplace le nom de famille de la \textit{PERSONNES} "00001" par "Robert".
+La requête SQL suivante remplace le nom de famille de la personne ayant pour clée primaire "00001" par "Robert".
 \begin{lstlisting}
   UPDATE PERSONNES
   SET nompersonne = 'Robert'
@@ -94,12 +95,13 @@ La requête SQL suivante supprime les tuples des \textit{PERSONNES} qui s'appell
   WHERE prenompersonne = "Jean";
 \end{lstlisting}
 
-\subsection{Le Langage de Controle des Données (LCD)}
+\subsection{Le Langage de Contrôle des Données (LCD)}
 Cet aspect du SQL n'est pas demandé pour l'application et n'est pas traité.
 
 \subsection{Transaction ACID}
 Cet aspect des bases de données n'est pas demandé pour l'application et n'est pas traité.
-En d'autres termes, une base de données géré par l'application ne peut être utilisée que par une seule personne à fois, sinon elle perd sa cohérence.
+Par conséquent, une base de données géré par l'application ne peut être utilisée que par une seule personne à fois, sinon elle perd sa cohérence.
+Les modifications effectuées sur les données sont toutes automatiquement \gls{commit}* et l'utilisateur ne peut pas modifier ce comportement.
 
 \subsection{Résumé des fonctionnalités}
 L'application permet de :

@@ -5,14 +5,15 @@ L'application est développée avec le langage Java, pour profiter des \textit{m
 \footnote{\label{les_machines_virtuelles}Machines virtuelles Java : \url{https://docs.oracle.com/javase/8/docs/technotes/guides/vm/}}.
 
 \subsection{Version du Java Runtime Environment}
-L'\gls{IDE}* est configuré de façon à utiliser la version 1.7 de \gls{JRE}*.
+L'application est développée avec la version 1.7 du \gls{JRE}.
 
 \subsection{Interfaces Homme-Machine (IHM)}
-Les IHM sont développées en Java, en utilisant les classes des packages \textit{java.swing} et \textit{javax.swing}. Ces packages disposent des listes déroulantes, cases à cocher, boutons, barre de défilements, etc.
+Les \gls{ihm} sont développées en Java, en utilisant les classes des packages \textit{java.swing} et \textit{javax.swing}.
+Ces packages disposent des listes déroulantes, cases à cocher, boutons, barre de défilements, etc.
 \footnote{\label{element_de_formulaire}Package \textit{javax.swing} : \url{https://docs.oracle.com/javase/7/docs/api/javax/swing/package-summary.html}}.
 
 \subsection{Performances}
 Pour éviter les lenteurs dues aux accès vers le SGBD, l'application possède une couche \gls{orm} sur les tables.
 
 \subsection{Compatibilité avec les SGBD}
-L'application est conçue sur le principe \underline{ouvert-fermé} : pour la rendre compatible avec un nouveau SGBD, il n'y a que du code à \textit{ajouter}, aucun (ou presque) à \textit{modifier}.
+L'application est conçue sur le principe \textit{ouvert-fermé} : pour la rendre compatible avec un nouveau \gls{sgbd}, il n'y a que du code à \textit{ajouter}, aucun (ou presque) à \textit{modifier}.

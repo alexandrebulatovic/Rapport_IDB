@@ -19,8 +19,10 @@ rm *~;
 for fichier in `ls`
 do
     estTex $fichier
-    if [ $? == 0 && $fichier != "comp" ] ; then
-	rm -f $fichier;
+    if [ $? == 0 ] ; then
+	if [ $fichier != "comp" ] ; then
+	    rm -f $fichier;
+	fi
     fi
 done
 }

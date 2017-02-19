@@ -5,7 +5,8 @@ En informatique, elles sont numérisées, définies et manipulées grâce à des
 Il existe différents types de bases de données, mais le marché reste dominé par les \glspl{bddr}\footnote{\label{part_de_marché_relationnel}
 Classement des \glspl{sgbd} les plus populaires : \url{http://db-engines.com/en/ranking}}.
 Ces dernières sont gérées par des SGBD relationnels (dit SGBDR) 
-dont les plus connus sont Oracle, MySQL et PostgreSQL.
+dont les plus connus sont Oracle, MySQL et PostgreSQL
+\footnote{Dans la suite de ce document, le terme \gls{sgbd} désigne des SGBDR}.
 
 Ces logiciels permettent de définir et de manipuler des bases de données par le biais du \gls{sql}, 
 langage déclaratif et normé qui reste le premier et le plus exhaustif des moyens de gérer une base de données relationnelle .
@@ -15,21 +16,14 @@ Certaines applications, comme \textit{Access}, \textit{LOBase} ou encore \textit
 \glspl{ihm}: il est possible de définir les données ou de les manipuler par des clics de boutons, des glisser-déplacer, des cases à cocher ou encore de la saisie
 de texte non codé. 
 
-Le but de ce projet tuteuré est de réaliser une application permettant d'utiliser certaines fonctionnalités des
-\gls{sgbd} \underline{sans} 
-utilser de \gls{sql}, et ce sur n'importe quel \gls{sgbd}.
-\footnote{\label{sgbd_et_sgbdr}Dans ce rapport, le terme \gls{sgbd} signifie SGBDR.}
-Pour cela, il propose une série d'IHM qui en reprennent certaines fonctionnalités,
-à savoir le \gls{ldd} et le \gls{lmd}.
-
-Les utilisateurs finaux de l'application sont les élèves de première année du DUT Informatique, pour
-les aider à découvrir les bases de données.
+A la manière des trois précédents logiciels, ce projet propose une application qui permet de manipuler une base de données \underline{sans} utiliser le langage \gls{sql}.
+Les fonctionnalités principales sont le \gls{ldd} et le \gls{lmd}.
+Les utilisateurs finaux de l'application sont les élèves de première année du DUT Informatique, pour leur faire découvrir les bases de données.\\
 
 Ce document présente les différentes phases de création de cette application : l'analyse, la conception, le développement et les tests.
 Un manuel d'utilisation est disponible dans les dernières pages.
 
-Afin de mieux situer l'application, la figure \ref{sans_idb_schema} montre l'utilisation classique d'un SGBD et 
-la figure \ref{avec_idb_schema} l'utilisation de l'application développée.
+Afin de mieux situer l'application, les figures \ref{sans_idb_schema} et \ref{avec_idb_schema} montrent respectivement l'utilisation classique d'une base de données sans et avec l'application développée.
 
 \begin{figure}[!h]
   \centering

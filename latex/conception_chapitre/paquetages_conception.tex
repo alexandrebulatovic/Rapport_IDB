@@ -46,7 +46,7 @@ Ce paquetage peut être comparé à \textit{java.util}
 \footnote{\label{paguetage_java_util}Package \textit{java.util} : \url{https://docs.oracle.com/javase/7/docs/api/java/util/package-summary.html}}
 de java, qui contient les utilitaires que l'on retrouve dans toutes les applications.
 
-\subsubsection{Les classes Response}
+\subsubsection{Classe Response}
 \begin{figure}[!h]
   \centering
   \includegraphics[width=10cm]{images/response.eps}
@@ -77,4 +77,8 @@ Les succès ou les échecs des appels au SGBD sont traités uniquement dans inst
 Ces objets sont utilisés également dans les IHM : une Response dont le premier attribut est faux affiche un message rouge d'erreur.
 Une Response positive affiche un message bleu.
 
-
+\subsubsection{Classe ResponseData<T>}
+La classe Response est spécialisée par ResponseData.
+Elle est utile lorsque le DAO est utilisé pour \textbf{récupérer} des informations du SGBD.
+En plus des informations de la classe Response, elle possède une collection d'objets T.
+Elle peut par exemple stocker le résultat d'une requête SELECT ou encore retourner le nom des tables disponibles dans la base de données.

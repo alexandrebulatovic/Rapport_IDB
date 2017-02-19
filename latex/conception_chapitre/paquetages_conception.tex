@@ -67,21 +67,21 @@ Les méthodes retournent des objets \textit{Response} et ne lèvent aucune excep
 
 Cette classe possède deux attributs, comme le montre la figure \ref{uml_classe_response}:
 \begin{enumerate}
-\item un booléen, vrai si et seulement si la méthode du DAO a réussi,
-\item une chaîne de caractère qui contient un message du SGBD si la méthode du DAO a échouée, ou un message de réussite si tout c'est bien passé.
+\item un booléen, vrai si et seulement si la méthode du \gls{dao} a réussi,
+\item une chaîne de caractère qui contient un message du \gls{sgbd} si la méthode du DAO a échouée, ou un message de réussite si tout c'est bien passé.
 \end{enumerate}
 
 Avec Response, on récupère donc deux informations en un seul \textit{return}.
 Les succès ou les échecs des appels au SGBD sont traités uniquement dans instructions conditionnelles.
 
-Ces objets sont utilisés également dans les IHM : une Response dont le premier attribut est faux affiche un message rouge d'erreur.
+Ces objets sont utilisés également dans les \glspl{ihm} : une Response dont le premier attribut est faux affiche un message rouge d'erreur.
 Une Response positive affiche un message bleu.
 
 \subsubsection{Classe ResponseData<T>}
 La classe Response est spécialisée par ResponseData.
 Elle est utile lorsque le DAO est utilisé pour \textbf{récupérer} des informations du SGBD.
 En plus des informations de la classe Response, elle possède une collection d'objets T.
-Elle peut par exemple stocker le résultat d'une requête SELECT ou encore retourner le nom des tables disponibles dans la base de données.
+Elle peut par exemple stocker le résultat d'une \gls{query} SELECT ou encore retourner le nom des tables disponibles dans la base de données.
 
 \subsection{Paquetage des IHM}
 Les IHM sont regroupées dans le paquetage \textit{gui}.

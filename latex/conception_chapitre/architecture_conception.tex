@@ -34,9 +34,9 @@ Les IHM ne sont donc pas des singletons et les contrôleurs y sont associés (au
 La couche \textit{entité} ou \textit{métier} contient la valeur ajouté de l'application, c'est à dire toutes les classes dont le code génère le service de l'application.
 
 Dans ce projet tuteuré, les classes métiers sont une pseudo-couche \gls{orm}
-\footnote{\label{faux_orm}Les ORM convertissent les données en objets, dans cette application se sont les \textit{conteneurs} des données qui sont convertits en objets.}
+\footnote{\label{faux_orm}Les ORM convertissent les données en objets, dans cette application se sont les \textit{conteneurs} des données qui sont convertis en objets.}
 qui représentent les tables et les contraintes du SGBD connecté à l'application.
-Elles limitent les accès au SGBD, ce qui augmente les performances de l'application et participent à la génération de code SQL à partir des saisies faites dans les IHM.
+Elles limitent les accès réseaux au SGBD, ce qui augmente les performances de l'application, et participent à la génération de code SQL à partir des saisies faites dans les IHM.
 
 Sur la figure \ref{diagramme_de_paquetage_idb}, la couche métier se trouve dans le paquetage \textit{business}.
 
@@ -51,7 +51,7 @@ Sur la figure \ref{diagramme_de_paquetage_idb}, la couche facade se trouve dans 
 La couche \gls{dao} permet d'enregistrer et récupérer des informations depuis le SGBD.
 En temps normal, les DAO permettent d'enregistrer des données.
 Dans cette application, ils permettent d'enregistrer les données, leurs conteneurs (tables) et les \glspl{constraint}.
-Ils ont également un rôle de générateur de SQL, généralement "simple" et qui diffère selon le SGBD connecté, contrairement aux classes métiers qui fournissent du SQL qui fonctionne sur tous les SGBD.
+Ils ont également un rôle de générateur de code SQL, généralement "simple" et qui diffère selon le SGBD connecté, contrairement aux classes métiers qui fournissent du SQL qui fonctionne sur tous les SGBD.
 
 Sur la figure \ref{diagramme_de_paquetage_idb}, la couche DAO se trouve dans le paquetage \textit{manager}.
 Les DAO sont utilisés \textit{à peu près} en suivant le design pattern \textit{data mapper}

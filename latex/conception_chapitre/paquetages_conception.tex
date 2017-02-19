@@ -4,13 +4,13 @@ Cette section détaille les couches évoquées dans l'autre section \ref{partie_
 L'application utilise une \textit{fabrique abstraite} qui se trouve dans le paquetage \textit{factory}.
 
 \subsubsection{Utilité}
-L'une des problématiques est de faire fonctionner l'application par dessus tous les SGBD disponibles.
+L'une des problématiques est de faire fonctionner l'application avec tous les SGBD disponibles.
 Bien que le langage SQL soit normé, les SGBD ne l'implémentent pas de la même manière, ce qui veut dire que la syntaxe des requêtes est \underline{différente} d'un SGBD à l'autre.
 Ce point constitue la difficulté principale du développement, et la fabrique abstraite permet de la régler tout en respectant les principes \textit{ouvert/fermé}. Elle permet également de régler d'autres problèmes mineurs, comme la gestion de la casse qui diffère d'un SGBD à l'autre
 \footnote{\label{casse_et_sgbd}Oracle convertit le nom des tables et contraintes en majuscule, ce qui n'est pas le cas de MySQL par exemple.}.
 
 En raison du temps disponible pour le développement, l'application ne fonctionne qu'avec les SGBD Oracle et MySQL.
-En revanche, elle accueille un nouvel SGBD sans \textbf{modifier} le code existant: il faut en \textbf{ajouter}.
+En revanche, elle accueille un nouvel SGBD sans \textbf{modifier} le code existant: il faut seulement en \textbf{ajouter}.
 
 \subsubsection{Dépendances supplémentaires}
 Les dépendances de ce paquetage ne sont pas toutes représentées sur la figure \ref{diagramme_de_paquetage_idb}.
@@ -41,7 +41,7 @@ Plusieurs classes sont utilisées un peu partout dans le code.
 Ces classes (développées par l'équipe du projet) sont regroupées dans le paquetage \textit{useful}, qui n'apparaît pas sur la figure \ref{diagramme_de_paquetage_idb}.
 
 \subsubsection{Dépendances}
-Tous les paquetages de cette application dépendent du paquetage useful, mais ce n'est pas génant dans la mesure où le code de ces classes n'est jamais amené à changer.
+Tous les paquetages de cette application dépendent du paquetage useful, mais ce n'est pas gênant dans la mesure où le code de ces classes n'est jamais amené à changer.
 Ce paquetage peut être comparé à \textit{java.util}
 \footnote{\label{paguetage_java_util}Package \textit{java.util} : \url{https://docs.oracle.com/javase/7/docs/api/java/util/package-summary.html}}
 de java, qui contient les utilitaires que l'on retrouve dans toutes les applications.

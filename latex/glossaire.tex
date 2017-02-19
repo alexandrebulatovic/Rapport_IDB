@@ -19,6 +19,25 @@
   description={Java DataBase Connectivity est une interface de programmation permettant de manipuler des bases de données avec des objets. Les systèmes de gestion de base de données doivent fournir un pilote JDBC correspondant à l'implémentation de cette interface}
 }
 
+\newglossaryentry{JRE}
+{
+  name=JRE,
+  description={Java Runtime Environment correspond à l'environnement d'exécution d'une application Java. Cet environnement est composé d'une machine virtuelle chargée d'exécuter les fichiers compilées ainsi que des bibliothèques standards fourni par Java}
+}
+
+\newglossaryentry{MVC}
+{
+  name=MVC,
+  description={Modèle-Vue-Contrôleur est une façon d'organiser le code de programmation qui est optimale pour les logiciels ayant une interface graphique. Cette architecture est très répandu et est aujourd'hui utilisé par de très nombreux outils l'implémentant automatiquement pour le développeur}
+}
+
+\newglossaryentry{commit}
+{
+  name=commit,
+  description={ est une instruction permettant de demander au SGBD de répercuter sur la base de données toutes les actions préalablement mis en "cache" par ce dernier. Les modifications effectuées deviennent par conséquent visible pour les autres utilisateurs du SGBD}
+}
+
+
 
 \newglossaryentry{attribut}
         {name={attribut},
@@ -69,7 +88,7 @@
 \newacronym[first={Create, Read, Update, Delete (CRUD)}]
                            {crud}
                            {CRUD}
-                           {Create, Read, Update, Delete sont les quatre opérations basiques à effectuer sur des enregistrements de données, respectivement : en ajouter des nouveaux, les lire, les mettre à jour et les effacer.}
+                           {Create, Read, Update, Delete sont les quatre opérations basiques à effectuer sur des enregistrements de données, respectivement : en ajouter des nouveaux, les lire, les mettre à jour et les effacer}
 
 \newacronym[first={système d'Information (SI)},
                            firstplural={systèmes d'information (SI)}]
@@ -103,19 +122,20 @@
 \newglossaryentry{primarykey}
         {name={clée primaire},
         plural={clées primaires},
-        description={Contrainte posée sur un attribut ou groupe d'attributs d'une table, les rendant identifiants, uniques et non nuls}}
+        description={Contrainte sur un ou plusieurs attributs d'une table, les rendant "identifiant" de cette table et par conséquent servant à identifier de façon unique une ligne de la table. La clée primaire doit être non nulle}}
 
 \newacronym[first={Query By Example (QBE)},
         firstplural={Queries By Example (QBE)}]
         {qbe}
         {QBE}
         {Query By Example, IHM permettant de réaliser des requêtes SQL compliquées au moyens de clics de souris, de drag-and-drop et autres
-        facilités ne demandant pas de connaître le langage SQL}
+        facilités ne demandant pas de connaître le langage SQL. L'utilisateur indique un exemple de résultat qu'il souhaiterait obtenir et le SGBD se charge du reste}
 		
 \newglossaryentry{IDE}
 		{name={environnement de développement intégré},
 		plural={environnements de développements intégrés},
 		description={ensemble d'outils nécessaire à la programmation, regroupés en un logiciel (compilateur, éditeur de liens, débogeur, auto-complétion etc)}}
+		
 
 \newacronym[first={Object Relational Mapping (ORM)}]
         {orm}
@@ -126,8 +146,7 @@
 		{
 		name={mock},
 		plural={mocks},
-		description={objets simulés qui reproduisent le comportement d'objets réels de manière contrôlée. Utile pour tester individuellement des classes ayant besoin d'un classe tièrce suseptible de bugger à son tour.
-		Le test doit se porter sur la classe sans éléments perturbateurs}
+		description={Objet simulé qui reproduit le comportement d'un objet réel mais de façon contrôlée, c'est-à-dire que l'on connait par avance les résultats que vont retourner les méthodes appelés sur cet objet. Cela est utile pour tester individuellement des classes qui sont dépendantes d'un système externe non accessible dans un contexte de test (que ce soit de façon fonctionnelle ou par soucis de rapidité)}
 		}
 
 \newacronym[first={Développement Piloté par les Tests (TDD)},
@@ -135,7 +154,7 @@
 	{tdd}
 	{TDD}
 	{Le Développement Piloté par les Tests(\textit{test-driven development}), 
-	est une technique de développement de logiciel qui préconise d'écrire les \textbf{tests unitaires} avant d'écrire le \textbf{code source} d'un logiciel.}
+	est une technique de développement de logiciel qui préconise d'écrire les \textbf{tests unitaires} avant d'écrire le \textbf{code source} d'un logiciel}
 
 \newacronym[first={Data Access Object (DAO)},
                         firstplural={Data Access Objects}]

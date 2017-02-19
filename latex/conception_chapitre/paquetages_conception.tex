@@ -82,3 +82,29 @@ La classe Response est spécialisée par ResponseData.
 Elle est utile lorsque le DAO est utilisé pour \textbf{récupérer} des informations du SGBD.
 En plus des informations de la classe Response, elle possède une collection d'objets T.
 Elle peut par exemple stocker le résultat d'une requête SELECT ou encore retourner le nom des tables disponibles dans la base de données.
+
+\subsection{Paquetage des IHM}
+Les IHM sont regroupées dans le paquetage \textit{gui}.
+
+\subsubsection{Diagramme de classes des IHM}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=14cm]{images/gui.eps}
+\caption{Les IHM spécialisent \textit{AbstractBasicGUI}.}
+\label{hierarchie_des_ihm}
+\end{figure}
+
+AbstractBasicGUI regroupe un ensemble de méthodes qui gèrent seules l'agencement des composants
+\footnote{\label{composants_ihm}Barre de défilements, case à cocher, étiquettes, boite saisie etc.}
+, ce qui permet de concevoir une IHM en se focalisant sur le fond plutôt que sur la forme.
+
+\subsubsection{Comportement commun}
+Les IHM utilisent les méthodes suivantes :
+\begin{itemize}
+\item \textit{talk()}, qui communique avec l'utilisateur en écrivant un message sur une étiquette située \textbf{en haut} de la fenêtre,
+\item \textit{isComplete()}, qui autorise à appuyer sur le bouton "final" d'une IHM si et seulement si toutes les informations sont remplies.
+\end{itemize}
+
+En généralisant le comportement des IHM, l'utilisateur prend des habitudes sur l'application, ce qui la rend plus ergonomique.
+
+\subsection{Paquetage des gestionnaires}

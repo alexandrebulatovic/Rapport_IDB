@@ -84,7 +84,7 @@ En plus des informations de la classe Response, elle possède une collection d'o
 Elle peut par exemple stocker le résultat d'une \gls{query} SELECT ou encore retourner le nom des tables disponibles dans la base de données.
 
 \subsection{Paquetage des IHM}
-Les IHM sont regroupées dans le paquetage \textit{gui}.
+Les \glspl{ihm} sont regroupées dans le paquetage \textit{gui}.
 
 \subsubsection{Diagramme de classes des IHM}
 \begin{figure}[!h]
@@ -108,17 +108,17 @@ Les IHM utilisent les méthodes suivantes :
 En généralisant le comportement des IHM, l'utilisateur prend des habitudes sur l'application, ce qui la rend plus ergonomique.
 
 \subsection{Paquetage des gestionnaires}
-Le paquetage \textit{manager} regroupe les DAO et d'autres outils.
+Le paquetage \textit{manager} regroupe les \glspl{dao} et d'autres outils.
 Tout le contenu n'est pas détaillé dans cette sous-section.
 
-Les gestionnaires sont \textit{développés pour des interfaces} , afin de respecter le principe \textit{ouvert/fermé} et de permettre à l'application de se connecter à n'importe quel SGBD.
+Les gestionnaires sont \textit{développés pour des interfaces} , afin de respecter le principe \textit{ouvert/fermé} et de permettre à l'application de se connecter à n'importe quel \gls{sgbd}.
 Les objets sont instanciés depuis la fabrique MainFactory.
 
 \subsubsection{Gestionnaires de connexion}
 Les méthodes de connexions varient d'un SGBD à l'autre avec le \gls{JDBC}.
 Par conséquent, les classes qui gèrent la connexion implémentent une interface \textit{I\_ConnectionManager} (figure \ref{connection_managers_uml}).
 
-\begin{figure}[!h]
+\begin{figure}[!p]
 \centering
 \includegraphics[width=14cm]{images/connection_managers.eps}
 \caption{Implémentations du I\_ConnectionManager.}
@@ -126,9 +126,10 @@ Par conséquent, les classes qui gèrent la connexion implémentent une interfac
 \end{figure}
 
 \subsubsection{Gestionnaires de définition des données}
-Les gestionnaires de définition des données sont développés pour une interface \textit{I\_DDLManager} afin de générer les requêtes SQL de LDD compatibles avec le SGBD connecté (figure \ref{ddl_managers_uml}).
+Puisque le \gls{sql} n'est pas le même d'un \gls{sgbd} à l'autre,
+les gestionnaires de définition des données sont développés pour une interface \textit{I\_DDLManager} afin de générer les \glspl{query} LDD compatibles avec le SGBD connecté (figure \ref{ddl_managers_uml}).
 
-\begin{figure}[H]
+\begin{figure}[!p]
 \centering
 \includegraphics[width=14cm]{images/ddl_managers.eps}
 \caption{Implémentations du I\_DDLManager}

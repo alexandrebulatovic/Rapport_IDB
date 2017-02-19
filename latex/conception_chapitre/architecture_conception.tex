@@ -47,6 +47,21 @@ Elles n'apportent rien d'autres à l'application.
 
 Sur la figure \ref{diagramme_de_paquetage_idb}, la couche facade se trouve dans le paquetage \textit{facade}.
 
+Les figures \ref{trois_premières_couches} et \ref{facades_et_managers} montrent les intéractions entre les façades et les paquetages dont elles cassent les dépendances avec les contrôleurs. Les dépendances sont nombreuses. 
+\begin{figure}[!h]
+\centering
+\includegraphics[width=14cm]{images/facades_crud_ddl.eps}
+\caption{Couches présentation, contrôleur et façade.}
+\label{trois_premières_couches}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=14cm]{images/facades_managers.eps}
+\caption{Intéractions entre les façades et les autres paquetages.}
+\label{facades_et_managers}
+\end{figure}
+
 \subsection{Couche DAO}
 La couche \gls{dao} permet d'enregistrer et récupérer des informations depuis le SGBD.
 En temps normal, les DAO permettent d'enregistrer des données.

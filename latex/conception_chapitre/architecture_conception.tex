@@ -47,7 +47,12 @@ Elles n'apportent rien d'autres à l'application.
 
 Sur la figure \ref{diagramme_de_paquetage_idb}, la couche facade se trouve dans le paquetage \textit{facade}.
 
-Les figures \ref{trois_premières_couches} et \ref{facades_et_managers} montrent les intéractions entre les façades et les paquetages dont elles cassent les dépendances avec les contrôleurs. Les dépendances sont nombreuses. 
+Les figures \ref{trois_premières_couches} et \ref{facades_et_managers} montrent les intéractions entre les façades et les paquetages dont elles cassent les dépendances avec les contrôleurs. Les couleurs sont indépendantes d'une figure à l'autre, elles distinguent :
+\begin{itemize}
+\item les couches présentation, contrôle et façade sur la figure \ref{trois_premières_couches},
+\item les associations entre les façaces et les autres classes sur la figure \ref{facades_et_managers}.
+\end{itemize}
+
 \begin{figure}[!h]
 \centering
 \includegraphics[width=14cm]{images/facades_crud_ddl.eps}

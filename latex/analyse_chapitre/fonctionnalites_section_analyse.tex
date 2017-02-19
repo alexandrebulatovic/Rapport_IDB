@@ -8,7 +8,7 @@ Il ne s'intéresse pas aux données contenues dans les tables
 \footnote{\label{interet_ldd}Le LDD prend en compte les données contenues dans les tables et peut agir dessus, mais c'est une conséquence, pas son rôle.}, mais à la structure des tables. Le LDD est séparé en trois instructions:
 
 \subsubsection{Create table}
-Permet de créer une \gls{table}. Dans un SGBD, les tables sont nommées, chaque nom est unique.
+Permet de créer une \gls{table}. Dans un SGBD, les tables sont nommées et chaque nom est unique.
 Une table est créée avec au moins un attribut dont il faut préciser le type de données (texte, nombre, date etc.) et la taille.
 Des \glspl{constraint} supplémentaires peuvent être ajoutées : les \textit{\glspl{primarykey}}, les attributs \textit{not null} et groupes d'attributs \textit{uniques}.
 
@@ -68,7 +68,7 @@ La requête SQL suivante permet d'ajouter un tuple ayant pour clée primaire \te
 
 \subsubsection{Read}
 Il s'agit de récupérer et croiser les données que contiennent les tables.
-Les requêtes SQL  "read" peuvent être très complexes.
+Les requêtes SQL "read" peuvent être très complexes.
 Certains SGBD proposent des \glspl{qbe}
 \footnote{Access, LOBase...}pour créer ces requêtes sans manipuler de \gls{sql}.
 Celle qui est écrite juste après est simple et permet de retrouver le nom de la \textit{PERSONNES} numéro "00001".

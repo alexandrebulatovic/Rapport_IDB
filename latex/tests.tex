@@ -10,6 +10,36 @@ Pour pallier à ce problème, il est possible de créer une deuxième classe ave
 \bigbreak
   Heureusement, il existe des bibliothèques externes qui permettent de créer des objets \gls{mock}* sans avoir à créer une nouvelle classe.
 Les classes natives de Java ne seront pas "mocké" car celles-ci ont déjà été testées avant d'être intégrées à Java et sont donc considérées "parfaites" (sans bugs).
+\bigbreak
+Exemple d'utilisation de la bibliothèque externe \textit{Mockito} :
+
+\lstset{
+language=Java,
+basicstyle=\normalsize, % ou ça==> basicstyle=\scriptsize,
+upquote=true,
+aboveskip={1.5\baselineskip},
+columns=fullflexible,
+showstringspaces=false,
+extendedchars=true,
+breaklines=true,
+showtabs=false,
+showspaces=false,
+showstringspaces=false,
+identifierstyle=\ttfamily,
+keywordstyle=\color[rgb]{0,0,1},
+commentstyle=\color[rgb]{0.133,0.545,0.133},
+stringstyle=\color[rgb]{0.627,0.126,0.941},
+}
+\begin{lstlisting}
+SQLManager sqlManager = Mockito.mock(SQLManager.class);
+
+Mockito.when(sqlManager.sendQuery(Mockito.contains("SELECT"))).thenReturn(true);
+Mockito.when(sqlManager.sendQuery("")).thenThrow(IllegalArgumentException.class);
+Mockito.when(sqlManager.getGeneratedJTable()).thenReturn(new JTable());
+Mockito.when(sqlManager.getGeneratedReply()).thenReturn(Mockito.anyString());
+
+\end{lstlisting}
+\bigbreak
 
 Il est utile de tester pour vérifier que les fonctionnalités telles que définies dans le cahier des charges correspondent bien à ce qui a été développé.
 \exemple{Un utilisateur doit pouvoir se connecter à la base de données. Si un jour, après une légère modification, l'utilisateur ne peut plus se connecter alors qu'il le devrait, le reste du logiciel deviendrait inutile aux yeux du client\newline}

@@ -59,13 +59,13 @@ Les DAO de l'application utilisent les packages \textit{java.sql} et \textit{jav
 En cas de problèmes lors du dialogue avec les SGBD, les méthodes de ces packages lèvent les exceptions \textit{SQLException}.
 
 Travailler avec les exceptions est pénible : elles forcent à utiliser des clauses \textit{try/catch} où à déclarer des méthodes qui lèvent des exceptions.
-La programmation devient chaotique puisqu'elle se rapproche d'une programmation évènementielle, la ligne d'exécution peut sauter à tout moment pour se retrouver dans la clause catch.
+La programmation devient chaotique puisqu'elle se rapproche d'une programmation événementielle, la ligne d'exécution peut sauter à tout moment pour se retrouver dans la clause catch.
 Il faut ensuite gérer les types de retour des méthodes ou les exceptions levées.
 
 Dans ce projet, les exceptions restent bloquées dans les classes du paquetage manager.
 Les méthodes retournent des objets \textit{Response} et ne lèvent aucune exception.
 
-Cette classe possèdent deux attributs, comme le montre la figure \ref{uml_classe_response}:
+Cette classe possède deux attributs, comme le montre la figure \ref{uml_classe_response}:
 \begin{enumerate}
 \item un booléen, vrai si et seulement si la méthode du DAO a réussi,
 \item une chaîne de caractère qui contient un message du SGBD si la méthode du DAO a échouée, ou un message de réussite si tout c'est bien passé.

@@ -2,7 +2,7 @@ Les tests constituent des éléments indispensables, ils permettent d'avancer su
 \section{Pourquoi tester}
 
 
-Idéalement, chaque classe devrait être testé \textbf{unitairement}.
+Idéalement, chaque classe devrait être testée \textbf{unitairement}.
 Malheureusement, certains comportement ne peuvent pas être testé de manière efficiente (= de façon automatique) car par exemple pour tester les fonctionnalités d'un logiciel ayant des interactions avec \gls{sgbd}, il faudrait que l'utilisateur stocke ses identifiants de connexion en dur dans une classe accessible par sa classe de test, et il faudrait également qu'il ait préalablement créé la liste de toutes les tables nécessaires au fonctionnement de son programme.
 \bigbreak
 
@@ -50,7 +50,7 @@ Certaines classes ne sont pas testables sans utiliser des bibliothèques complex
 
 \section{Les tests choisis}
 
-Nous avons donc choisis de tester en priorité les classes \textbf{Métiers}, une suite de tests appelée \textbf{AllTests} se charge  de lancer tous les tests liés aux classes métiers : 
+Nous avons donc choisis de tester en priorité les classes \textbf{Métiers}, une suite de tests appelée \textbf{AllTests} se charge  de lancer tous les tests liés aux classes métiers :
 \\
 
 \begin{itemize}
@@ -64,16 +64,16 @@ Nous avons donc choisis de tester en priorité les classes \textbf{Métiers}, un
 \\
 
 
-La plupart des tests ont été écrits après l'implémentation des fonctionnalités, exception faite pour certaines classes utilisant les classes du package \textbf{Métiers} qui ont été développement suivant la technique de \gls{tdd}*.
+La plupart des tests ont été écrits après l'implémentation des fonctionnalités, exception faite pour certaines classes utilisant les classes du package \textbf{Métiers} qui ont été développés en \gls{tdd}*.
 \medbreak
 La classe faisant office de \gls{dao}* pour le \gls{crud} utilise une bibliothèque externe pour pouvoir mocker son comportement : \textbf{Mockito}. Tous les appels à cette classe sont donc capturés et gérés par le développeur directement dans la classe de test une fois celle-ci "mocké", ce qui permet de tester sa couche de contrôle et sa couche de façade sans créer de classes de \gls{mock} supplémentaires.
 
 \medbreak
 
-Les structures de données ResponseData et Response servant à éviter de traiter des exceptions (voir Figure  \ref{uml_classe_response}) sont également testés individuellement, leur place étant importante au sein du projet.
+Les structures de données ResponseData et Response servant à éviter de traiter des exceptions \textit{(voir Figure  \ref{uml_classe_response})} sont également testés individuellement, leur place étant importante au sein du projet.
 
 \bigbreak
-Des tests sur la connexion sont également effectuées, c'est l'un des éléments clés du projet car toutes les fonctionnalités reposent sur le fait que la connexion est fonctionnelle. Les test d'intégrations ne passent pas si les tests unitaires sur la connexion ne passent pas).
+Des tests sur la connexion sont également effectuées, c'est l'un des éléments clés du projet car toutes les fonctionnalités reposent sur le fait que la connexion est fonctionnelle. Les tests d'intégrations ne passent pas si les tests unitaires de la connexion ne passent pas).
 
-Pour cela, différents objets nécessaire à l'établissement d'une connexion ont été mocké et des tests vérifiant l'état de la connexion sont effectués.
+Pour cela, différents objets nécessaires à l'établissement d'une connexion ont été \textit{mockés} et des tests vérifiant l'état de la connexion sont effectués.
 

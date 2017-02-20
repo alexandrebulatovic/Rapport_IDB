@@ -25,7 +25,7 @@ Le choix du langage à utiliser était libre, nous avons donc opté pour un lang
 \end{figure}
 
 
-Nous avons choisi de travailler avec le logiciel \textbf{Éclipse} (figure \ref{eclipse_logo}), l'\gls{IDE} par excellence pour développer du \textbf{Java}.
+Nous avons choisi de travailler avec le logiciel \textbf{Éclipse} (figure \ref{eclipse_logo}), un \gls{IDE} pour développer en \textbf{Java}.
 
 \begin{figure}[H]
 \centering
@@ -34,12 +34,13 @@ Nous avons choisi de travailler avec le logiciel \textbf{Éclipse} (figure \ref{
 \label{eclipse_logo}
 \end{figure}
 
-\textbf{Éclipse} est agréable à utiliser, il est libre de droits et fait partit des IDE les plus puissants de nos jours.
-La bibliothèque nous permettant de faire des \gls{ihm} est swing, une bibliothèque native de Java, constamment mise à jours et très utilisée (donc très documenté).
+\textbf{Éclipse} est disponible à l'IUT et libre.
+La bibliothèque nous permettant de faire des \gls{ihm} est java.swing, un package Java documenté et expliqué par Oracle
+\footnote{Tutoriel java.swing : \url{https://docs.oracle.com/javase/tutorial/uiswing/}}
 
 \section{Planification}
-Le projet a été découpé en sept itérations de durée variante (d'une semaine à un mois) en fonction des périodes d'examens et de vacances. Au cours de chaque itérations, de nombreux refactorings de code ainsi que d'organisation du code ont eu lieu.
-
+Le projet a été découpé en sept itérations de durées variantes (d'une semaine à un mois) en fonction des périodes d'examens et de vacances. 
+Chaque itération refactore le code et en ajoute.
 
 \subsection{Itération 1 - 14/11/2016}
 
@@ -50,8 +51,10 @@ Le projet a été découpé en sept itérations de durée variante (d'une semain
 \end{itemize}
 
 \subsubsection{Résultat}
-L'utilisateur peut connecter à une base de données mais il y a des problèmes au niveau des champs de saisies. Le mode requête SQL ne fonctionne pas parfaitement.
-Cette itération n'avait pas de grosse valeur pour le client. Elle a surtout permis de poser les bases de notre travail en groupe sur le projet en commençant à utiliser et se familiariser avec les outils de collaboration.
+L'utilisateur peut se connecter à une base de données mais il y a des problèmes au niveau des champs de saisies. 
+Le mode requête SQL ne fonctionne pas parfaitement.
+Cette itération n'a pas de grosse valeur ajoutée pour le client. 
+Elle a surtout permis de poser les bases du travail en groupe en posant les bases des outils de collaboration.
 
 
 \subsection{Itération 2 - 02/12/2016}
@@ -62,22 +65,22 @@ Cette itération n'avait pas de grosse valeur pour le client. Elle a surtout per
 \end{itemize}
 
 \subsubsection{Résultat}
-Les bugs signalés sont corrigés et la vue de création de table fonctionne avec quelques bugs mineurs.
-Cette itération fut satisfaisante pour le groupe car les attentes ont été respectées.
+Les bugs signalés sont corrigés et la vue de création des tables fonctionne avec quelques bugs mineurs.
+Cette itération est satisfaisante pour le groupe car les attentes ont été respectées.
 
 \subsection{Itération 3 - 15/12/2016}
 \subsubsection{Fonctionnalités et travail réalisé}
 \begin{itemize}
 \item Connexion à MySQL.
-\item Correction des bugs sur la fenêtre de création de tables.
-\item Suppression de tables.
-\item Modification de tables.
+\item Correction des bugs sur la fenêtre de création des tables.
+\item Suppression des tables.
+\item Modification des tables.
 \end{itemize}
 
 \subsubsection{Résultat}
-Les bugs signalés sont corrigés et la vue de suppression de table fonctionne.
-La modification de table ne fonctionne pas totalement.
-Cette itération fut mitigée car la valeur apportée au client n'était pas conséquente. 
+Les bugs signalés sont corrigés et la vue de suppression des tables fonctionne.
+La modification des tables fonctionne partiellement.
+Cette itération est mitigée car la valeur apportée au client n'était pas conséquente. 
 
 
 \subsection{Itération 4 - 12/01/2017}
@@ -88,9 +91,9 @@ Cette itération fut mitigée car la valeur apportée au client n'était pas con
 \end{itemize}
 
 \subsubsection{Résultat}
-La fenêtre CRUD fonctionne partiellement (fonctionnalité update pas implantée) et quelques bugs sur l'insertion. 
-La modification de table ne fonctionne pas totalement.
-Cette itération fut peu satisfaisante mais a permis une remise en question de notre organisation. 
+La fenêtre CRUD fonctionne partiellement (fonctionnalité \textit{update} non-implantée) et quelques bugs sur l'insertion. 
+La modification des tables fonctionne partiellement.
+Cette itération est peu satisfaisante mais a permis une remise en question de notre organisation. 
 
 \subsection{Itération 5 - 02/02/2017}
 \subsubsection{Fonctionnalités et travail réalisé}
@@ -101,24 +104,25 @@ Cette itération fut peu satisfaisante mais a permis une remise en question de n
 
 \subsubsection{Résultat}
 La fenêtre CRUD fonctionne avec quelques bugs mineurs.
-La refonte des classes métiers avait pour but de stocker les différentes informations des tables de notre base de données et ainsi facilité l'accès à celles-ci.
+La refonte des classes métiers avait pour but de stocker les différentes informations des tables des bases de données et ainsi limiter les accès à celles-ci.
+De plus, les classes métiers devaient permettre de gérer plus facilement le processus de modification des tables. 
 La modification de table ne marche plus, mais la refonte des classes métiers va permettre de la faire fonctionner.
-Cette itération fut satisfaisante car la refonte des classes métiers nous simplifie beaucoup de choses. 
+Cette itération est satisfaisante puisque la refonte des classes métiers simplifie beaucoup de choses. 
 
 \subsection{Itération 6 - 09/02/2017}
 \subsubsection{Fonctionnalités et travail réalisé}
 \begin{itemize}
 \item Correction des bugs sur la fenêtre CRUD.
 \item Fin de la refonte des classes métiers de l'application.
-\item Modification des vues de Creation-Supression-Modification de tables pour qu'elles collent aux classes métiers.
-\item Création et supression de contraintes (uniques et clées étrangères).
+\item Modification des vues de Creation-Supression-Modification des tables pour qu'elles collent aux classes métiers.
+\item Création et supression des contraintes (uniques et clées étrangères).
 \end{itemize}
 
 \subsubsection{Résultat}
 La fenêtre CRUD fonctionne avec quelques bugs mineurs.
-La création et la suppression de tables fonctionnent avec les nouvelles classes métiers.
-La création et la suppression de contraintes ne fonctionne pas totalement.
-Cette itération était dans la continuité de l'itération 6. 
+La création et la suppression des tables fonctionnent avec les nouvelles classes métiers.
+La création et la suppression des contraintes fonctionnent partiellement.
+Cette itération est dans la continuité de l'itération 6. 
 
 \subsection{Itération 7 - 20/02/2017}
 \subsubsection{Fonctionnalités et travail réalisé}
@@ -131,9 +135,9 @@ Cette itération était dans la continuité de l'itération 6.
 
 \subsubsection{Résultat}
 
-La modification de tables et le QBE fonctionnent.
-La création et la suppression de contraintes fonctionne avec quelques bugs mineurs.
-Cette itération était surtout de la correction de bugs et de la rédaction du rapport. 
+La modification des tables et le QBE fonctionnent.
+La création et la suppression des contraintes fonctionnent avec quelques bugs mineurs.
+Cette itération concerne surtout la correction des bugs et la rédaction du rapport. 
 
 
 \section{Outils de collaboration}
@@ -146,7 +150,8 @@ Les premiers échanges que nous avons eus après l'attribution du sujet se sont 
 \item Maintenir l'ensemble des versions d'un ou plusieurs fichiers.\\
 \end{itemize}
 
-Etant majoritairement habitué à utiliser Git, c'est vers un dép\^ot \textbf{Github} (figure \ref{github_logo}) que nous nous sommes tourné.
+Etant majoritairement habitué à utiliser Git, c'est vers un dép\^ot \textbf{Github} (figure \ref{github_logo}) que nous nous sommes tourné
+\footnote{Site web GitHub : \url{https://github.com/}}.
 
 \begin{figure}[H]
 \centering
@@ -158,7 +163,8 @@ Etant majoritairement habitué à utiliser Git, c'est vers un dép\^ot \textbf{G
 
 
 \subsection{Répartition des tâches}
-Au cours de leurs formations antérieures, certain membres du projet ont eu l'habitude d'utiliser l'outil de gestion de projet \textbf{Trello} (figure \ref{trello_logo}). C'est pourquoi nous avons utiliser cet outil pour répartir les tâches.\\
+Au cours de leurs formations antérieures, certains membres du projet ont utilisé l'outil de gestion de projet \textbf{Trello} (figure \ref{trello_logo}). 
+C'est pourquoi nous avons utilisé cet outil pour répartir les tâches.\\
 
 \begin{figure}[H]
 \centering
@@ -167,24 +173,25 @@ Au cours de leurs formations antérieures, certain membres du projet ont eu l'ha
 \label{trello_logo}
 \end{figure}
 
-\textbf{Trello} permet de découper en <Tickets> les différentes t\^aches à réaliser. Ces tickets peuvent \^etres déplacés par les membres du projet dans différentes catégories :
+\textbf{Trello} permet de découper en \textit{tickets} les différentes t\^aches à réaliser. Ces tickets peuvent \^etres déplacés par les membres du projet dans différentes catégories :
 
 \begin{itemize}
 \item \textbf{TODO} - les t\^aches qu'il restent à faire. 
 \item \textbf{DOING} - les \^aches en cours de développement.
-\item \textbf{DONE} - les t\^aches qui sont terminées.
-\item \textbf{TESTS} - les t\^aches qui sont validées et testées.\\
+\item \textbf{TESTS} - les t\^aches en cours de test.
+\item \textbf{DONE} - les t\^aches qui sont terminées.\\
 \end{itemize}
 
-Chaque membre choisi un ticket dans la partie TODO et le déplace dans DOING. Puis lorsqu'il a terminé de dévelloper la fonctionnalité dans DONE et pour finir dans TEST.
-
-
+Chaque membre choisit un ticket dans la partie TODO et le déplace dans DOING. 
+Puis lorsqu'il a terminé de développer la fonctionnalité, le ticket va dans TEST et pour finir dans DONE.
 
 \subsection{Communication}
-Les outils de communication ont évolué au cours du projet. Nous avons tout d'abord utilisé naturellement la messagerie instantanée que propose \textbf{Facebook}. Cette messagerie simple, permet de partager des images ainsi que des documents.
-Cependant nous souhaitions pouvoir discuter à l'oral ce que ne permet pas facilement la messagerie de Facebook. C'est pour cette raison que nous avons migré sur le logiciel \textbf{Discord}(figure \ref{discord_logo}) qui permet, en plus de la messagerie et de l'échange de documents, de discuter à l'oral ce qui a grandement facilité notre communication.
+Les outils de communication ont évolué au cours du projet. Nous avons tout d'abord utilisé naturellement la messagerie instantanée que propose \textbf{Facebook}. 
+Cette messagerie simple, permet de partager des images ainsi que des documents.
+Cependant nous souhaitions pouvoir discuter à l'oral ce que ne permet pas facilement la messagerie de Facebook. 
+C'est pour cette raison que nous avons migré sur le logiciel \textbf{Discord} (figure \ref{discord_logo}) qui permet, en plus de la messagerie et de l'échange de documents, de discuter à l'oral ce qui a grandement facilité notre communication.
 
-\begin{figure}[!h]
+\begin{figure}[!p]
 \centering
 \includegraphics[width=10cm]{./images/activite/discordLogo.eps}
 \caption{Logo Discord}
@@ -193,7 +200,7 @@ Cependant nous souhaitions pouvoir discuter à l'oral ce que ne permet pas facil
 
 De plus, nous avons installé un BOT sur le Discord, lié a GitHub, qui écrit un message lors d'une modification du dép\^ot git (figure \ref{bot_discord}).
 
-\begin{figure}[!h]
+\begin{figure}[!p]
 \centering
 \includegraphics[width=10cm]{./images/activite/bot_discord.eps}
 \caption{Message du BOT Discord lié à GitHub}
@@ -203,9 +210,10 @@ De plus, nous avons installé un BOT sur le Discord, lié a GitHub, qui écrit u
 
 
 \subsection{Partage de documents}
-Tout au long du projet, nous avons produits différents documents qu'il nous a fallu stocker dans un endroit facile d'accès pour tous. Nous avons donc créé un dossier sur un \textbf{Google Drive} (figure \ref{googledrive_logo}) et l'avons partagé aux membres du groupe. Ce Drive nous a permis d'échanger et stocker des diagrammes, des pdfs, des documents texte, des maquettes pour les \glspl{ihm}* ainsi que d'autres fichiers que nous voulions conserver.
+Tout au long du projet, nous avons produit différents documents qu'il nous a fallu stocker dans un endroit facile d'accès pour tous. 
+Nous avons donc créé un dossier sur un \textbf{Google Drive} (figure \ref{googledrive_logo}) et l'avons partagé aux membres du groupe. Ce Drive nous a permis d'échanger et stocker des diagrammes, des pdfs, des documents texte, des maquettes pour les \glspl{ihm}* ainsi que d'autres fichiers que nous voulions conserver.
 
-\begin{figure}[!h]
+\begin{figure}[!p]
 \centering
 \includegraphics[width=10cm]{./images/activite/googleDriveLogo.eps}
 \caption{Logo Google Drive}

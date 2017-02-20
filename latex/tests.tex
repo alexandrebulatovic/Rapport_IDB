@@ -10,7 +10,7 @@ Pour pallier à ce problème, il est possible de créer une classe mock avec des
 
 
 \bigbreak
-  Heureusement, il existe des bibliothèques externes qui permettent de créer des objets \gls{mock}* sans avoir à créer une nouvelle classe.
+  Heureusement, il existe des bibliothèques externes qui permettent de créer des objets \gls{mock}* sans avoir à créer de nouvelles classes.
 Les classes natives de Java ne seront pas "mockés" car celles-ci ont déjà été testées avant d'être intégrées à Java et sont donc considérées "sans bugs".
 \bigbreak
 Exemple d'utilisation de la bibliothèque externe \textit{Mockito} :
@@ -46,7 +46,7 @@ Mockito.when(sqlManager.getGeneratedReply()).thenReturn(Mockito.anyString());
 Il est utile de tester pour vérifier que les fonctionnalités telles que définies dans le cahier des charges correspondent bien à celles qui ont été développées.
 \exemple{Un utilisateur doit pouvoir se connecter à la base de données. Si un jour, après une légère modification, l'utilisateur ne peut plus se connecter alors qu'il le devrait, le reste du logiciel deviendrait inutile aux yeux du client\newline}
 
-Certaines classes ne sont pas testables sans utiliser des bibliothèques complexes nécessitant d'écrire de nombreuses de lignes de code pour tester une seule fonctionnalité. C'est le cas notamment des classes servant d'IHM et dont la seule façon possible de tester est d'implémenter un objet dit "Robot" qui simulera l'action d'un utilisateur humain. Après concertation avec le tuteur du projet il a été décidé que ces tests se feront manuellement.
+Certaines classes ne sont pas testables sans utiliser des bibliothèques complexes nécessitant d'écrire de nombreuses de lignes de code pour tester une seule fonctionnalité. C'est le cas notamment des classes servant d'IHM et dont la seule façon possible de tester est d'implémenter un objet dit "Robot" qui simulerait l'action d'un utilisateur humain. Après concertation avec le tuteur du projet il a été décidé que ces tests se feront manuellement.
 
 \section{Les tests choisis}
 
@@ -73,7 +73,7 @@ La classe faisant office de \gls{dao}* pour le \gls{crud} utilise une bibliothè
 Les structures de données ResponseData et Response servant à éviter de traiter des exceptions \textit{(voir Figure  \ref{uml_classe_response})} sont également testés individuellement, leur place étant importante au sein du projet.
 
 \bigbreak
-Des tests sur la connexion sont également effectués, c'est l'un des éléments clés du projet car toutes les fonctionnalités reposent sur le fait que la connexion est fonctionnelle. Les tests d'intégrations ne passent pas si les tests unitaires de la connexion ne passent pas).
+Des tests sur la connexion sont également effectués, c'est l'un des éléments clés du projet car toutes les fonctionnalités reposent sur le fait que la connexion soit fonctionnelle. Les tests d'intégrations ne passent pas si les tests unitaires de la connexion ne passent pas).
 
 Pour cela, différents objets nécessaires à l'établissement d'une connexion ont été \textit{mockés} et des tests vérifiant l'état de la connexion sont effectués.
 
